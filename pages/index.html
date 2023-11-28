@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takaful Transactional Website</title>
+
+  <!--===== Local styles =====-->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/output.css">
+  <link rel="stylesheet" href="../css/swiper.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
+  <!--===== Favicon =====-->
+  <link rel="icon" href="../assets/favicon.svg" type="image/x-icon">
+
+  <!--===== Swiper =====-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!--===== Font Awesome =====-->
+  <script src="https://kit.fontawesome.com/83088d1172.js" crossorigin="anonymous"></script>
+</head>
+
+<!-- Temporary styling -->
+<style>
+  body {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+</style>
+
+<body>
+  <header class="mx-auto w-10/12 py-8">
+    <img src="../assets/logo.svg" alt="logo" srcset="">
+  </header>
+
+  <main class="pb-24">
+    <section>
+      <div class="mx-auto w-10/12 grid sm:grid-cols-1 lg:grid-cols-2 gap-x-20">
+        <div class="h-fit">
+          <div class="swiper loginSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img src="../assets/images/placeholder.jpg" alt="">
+              </div>
+              <div class="swiper-slide">Slide 2</div>
+              <div class="swiper-slide">Slide 3</div>
+              <div class="swiper-slide">Slide 4</div>
+              <div class="swiper-slide">Slide 5</div>
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+
+          <div class="mt-4 flex justify-center">
+            <div class="grid grid-cols-2 gap-x-4">
+
+              <div class="shadow-lg p-4 rounded-[8px] grid justify-center w-fit">
+                <div class="grid grid-cols-[30px_1fr] gap-x-2 items-center">
+                  <img class="mx-auto w-[45px] h-[45px]" src="../assets/images/customer-service-icon.svg"
+                    alt="Human Support">
+                  <p class="text-base font-medium text-font-primary">Customer Service</p>
+                </div>
+                <div class="grid grid-cols-[1fr_40px] items-center">
+                  <p class="text-[12px] text-[#595D59]">1-300 88 252 385</p>
+                  <div class="flex justify-end">
+                    <img src="../assets/images/telephone-icon.svg" alt="">
+                  </div>
+                </div>
+              </div>
+
+              <div class="shadow-lg p-4 rounded-[8px] grid justify-center w-fit">
+                <div class="grid grid-cols-[30px_1fr] gap-x-4 items-center">
+                  <img class="mx-auto w-[45px] h-[45px]" src="../assets/images/email-icon.svg" alt="Email">
+                  <p class="text-base font-medium text-font-primary">Email</p>
+                </div>
+                <div class="grid grid-cols-[1fr_40px] gap-x-4 items-center justify-between">
+                  <p class="text-[12px] text-[#595D59]">csu@takaful-<br>malaysia.com.my</p>
+                  <div class="flex justify-end">
+                    <img src="../assets/images/arrow-icon.svg" alt="">
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+        <div>
+          <p class="text-font-primary text-[32px] font-bold pb-8">Welcome to Customer Portal</p>
+          <p class="text-font-primary text-[24px] font-semibold pb-6">Login</p>
+          <form action="">
+            <input placeholder="920202-06-5105" class="mb-6" type="text" name="user-id">
+            <input placeholder="***********" class="mb-10" type="password" name="password">
+            <button class="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
+              type="submit">Login</button>
+          </form>
+          <p class="pb-2">
+            <i class="fa-solid fa-arrow-right fa-xs pr-2" style="color: #237bff;"></i><span
+              class="text-font-primary">Forgot username or password?</span>
+            <span class="text-[#237BFF]"><a href="#">Click here</a></span>
+          </p>
+          <p>
+            <i class="fa-solid fa-arrow-right fa-xs pr-2" style="color: #237bff;"></i><span
+              class="text-font-primary">New to Kaotim?</span>
+            <span class="text-[#237BFF]"><a href="#">Register Now</a></span>
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <footer class="bg-background-primary text-center text-font-secondary py-4 flex flex-col justify-center">
+    <p class="pb-2">Security | Terms & Conditions | Privacy Notice | Customer Service Charter</p>
+    <p class="pb-1">Managed by © <span class="text-[#2194FF] underline">Syarikat Takaful Malaysia Keluarga
+        Berhad</span>
+      198401019089 (131646-K).</p>
+    <p class="pb-1">Licensed under the Islamic Financial Services Act 2013 and regulated by Bank Negara Malaysia.</p>
+    <p>A <img class="inline-block" src="../assets/images/pidm-logo.svg" alt="pidm-logo"> Member. For more info, please
+      refer to <span class="text-[#2194FF] underline">PIDM’s TIPS Brochure</span></p>
+  </footer>
+
+  <!-- Header and Footer -->
+  <script src="../js/layout.js"></script>
+
+  <!-- Swiper JS -->
+  <script type="module" src="../js/swiper.js"></script>
+
+</body>
+
+</html>

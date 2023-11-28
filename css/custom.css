@@ -1,0 +1,13 @@
+/* Spacing */
+section {
+  padding-bottom: 5rem;
+}
+
+
+/* Utilities */
+input {
+  width: 100%;
+  border: 1px solid #BBBBBB;
+  height: 50px;
+  border-radius: 5px;
+}

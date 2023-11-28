@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takaful Transactional Website</title>
+
+  <!--===== Local styles =====-->
+  <link rel="stylesheet" href="../css/normalize.css">
+  <link rel="stylesheet" href="../css/output.css">
+  <link rel="stylesheet" href="../css/swiper.css">
+  <link rel="stylesheet" href="../css/custom.css">
+
+  <!--===== Favicon =====-->
+  <link rel="icon" href="../assets/favicon.svg" type="image/x-icon">
+
+  <!--===== Swiper =====-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!--===== Font Awesome =====-->
+  <script src="https://kit.fontawesome.com/83088d1172.js" crossorigin="anonymous"></script>
+</head>
+
+<style>
+  progress[value]::-webkit-progress-bar {
+    background-color: #E7E7E7;
+    border-radius: 10px;
+  }
+
+  progress[value]::-webkit-progress-value {
+    background-color: #20C6A8;
+    border-radius: 10px;
+  }
+
+  progress {
+    border-radius: 10px;
+    height: 40%;
+  }
+</style>
+
+<body>
+  <header class="mx-auto w-10/12 py-8 flex justify-between">
+    <img src="../assets/logo.svg" alt="logo" srcset="">
+    <div class="flex pr-8">
+      <img class="pr-2" src="../assets/images/grid-icon.svg" alt="">
+      <div class="relative">
+        <img class="pr-2 h-full" src="../assets/images/bell-icon.svg" alt="">
+        <img class="absolute top-0 right-[10%]" src="../assets/images/notification-icon.svg" alt="">
+      </div>
+      <img src="../assets/images/user-icon.svg" alt="">
+    </div>
+  </header>
+
+  <main class="pb-24">
+    <section>
+      <p class="mx-auto w-10/12 text-[25px] font-bold pb-4">
+        Certificate
+      </p>
+      <div class="mx-auto w-10/12 pb-4">
+        <button
+          class="border-[#E03DFC] text-[#E03DFC] border-[1px] rounded-[40px] py-2 px-6 bg-[#F1D0F6] mr-2">All</button>
+        <button
+          class="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF] mr-2">Active</button>
+        <button
+          class="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF]">Inactive</button>
+      </div>
+      <div class="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+        <!-- First card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Motor
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Kaotim Motorcycle
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-active w-fit">
+              Active
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Vehicle No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              TCA8950
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Certificate No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              86050121
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary">
+              Expiry Date
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              24/12/2023
+            </div>
+
+          </div>
+          <div class="flex justify-end">
+            <button class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+              Show Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Second card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Medical
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Kaotim Medicard
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-active w-fit">
+              Active
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Plan Type
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              Bronze
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Contribution
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              RM536
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary relative col-span-2">
+              Annual Limit
+
+              <!-- Fourth row -->
+              <progress class="bg-active absolute bottom-[-100%] left-0 w-full" value="30" max="100"></progress>
+              <p class="absolute bottom-[-200%] text-right text-[14px] w-full">
+                <span class="text-active font-semibold">RM200,000</span>/RM1,000,000
+              </p>
+            </div>
+
+          </div>
+
+          <div class="flex justify-end">
+            <button class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+              Show Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Third card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Motor
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Takaful Motor Private Car
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-inactive w-fit">
+              Inactive
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Vehicle No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              TCA8950
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Certificate No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              KNO003456
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary">
+              Expiry Date
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              24/12/2023
+            </div>
+
+          </div>
+          <div class="flex justify-end">
+            <button class="text-[18px] text-white bg-primary rounded-[30px] py-3 px-6">
+              Renew Now
+            </button>
+          </div>
+        </div>
+
+        <!-- Fourth card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Medical
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Kaotim Medicard
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-active w-fit">
+              Active
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Plan Type
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              Silver
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Contribution
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              RM594
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary relative col-span-2">
+              Annual Limit
+
+              <!-- Fourth row -->
+              <progress class="bg-active absolute bottom-[-100%] left-0 w-full" value="30" max="100"></progress>
+              <p class="absolute bottom-[-200%] text-right text-[14px] w-full">
+                <span class="text-active font-semibold">RM300,000</span>/RM1,000,000
+              </p>
+            </div>
+
+          </div>
+
+          <div class="flex justify-end">
+            <button class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+              Show Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Fifth card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Motor
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Kaotim Motorcycle
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-active w-fit">
+              Active
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Vehicle No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              TCA8950
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Certificate No.
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              86050121
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary">
+              Expiry Date
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              24/12/2023
+            </div>
+
+          </div>
+          <div class="flex justify-end">
+            <button class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+              Show Details
+            </button>
+          </div>
+        </div>
+
+        <!-- Sixth card -->
+        <div class="px-4 py-8 shadow-lg rounded-[16px]">
+          <div class="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE]">
+            <div>
+              <p class="text-[18px] text-font-primary font-semibold">
+                Medical
+              </p>
+              <p class="text-[15px] text-font-secondary">
+                Kaotim Medicard
+              </p>
+            </div>
+            <div class="text-[12px] text-white px-3 py-2 rounded-[5px] bg-active w-fit">
+              Active
+            </div>
+          </div>
+          <div class="pt-4 pb-20 grid grid-cols-2 grid-rows-3 gap-y-4">
+
+            <!-- First row -->
+            <div class="text-base text-font-secondary">
+              Plan Type
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              Bronze
+            </div>
+
+            <!-- Second row -->
+            <div class="text-base text-font-secondary">
+              Contribution
+            </div>
+            <div class="text-right text-base text-font-primary font-bold">
+              RM536
+            </div>
+
+            <!-- Third row -->
+            <div class="text-base text-font-secondary relative col-span-2">
+              Annual Limit
+
+              <!-- Fourth row -->
+              <progress class="bg-active absolute bottom-[-100%] left-0 w-full" value="30" max="100"></progress>
+              <p class="absolute bottom-[-200%] text-right text-[14px] w-full">
+                <span class="text-active font-semibold">RM200,000</span>/RM1,000,000
+              </p>
+            </div>
+
+          </div>
+
+          <div class="flex justify-end">
+            <button class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+              Show Details
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section>
+      <p class="mx-auto w-10/12 text-[25px] font-bold pb-4">
+        Quick Links
+      </p>
+    </section>
+
+  </main>
+
+  <footer class="bg-background-primary text-center text-font-secondary py-4 flex flex-col justify-center">
+    <p class="pb-2">Security | Terms & Conditions | Privacy Notice | Customer Service Charter</p>
+    <p class="pb-1">Managed by © <span class="text-[#2194FF] underline">Syarikat Takaful Malaysia Keluarga
+        Berhad</span>
+      198401019089 (131646-K).</p>
+    <p class="pb-1">Licensed under the Islamic Financial Services Act 2013 and regulated by Bank Negara Malaysia.</p>
+    <p>A <img class="inline-block" src="../assets/images/pidm-logo.svg" alt="pidm-logo"> Member. For more info, please
+      refer to <span class="text-[#2194FF] underline">PIDM’s TIPS Brochure</span></p>
+  </footer>
+
+  <!-- Header and Footer -->
+  <script src="../js/layout.js"></script>
+
+  <!-- Swiper JS -->
+  <script type="module" src="../js/swiper.js"></script>
+
+</body>
+
+</html>
