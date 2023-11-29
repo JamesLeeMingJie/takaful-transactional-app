@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Takaful Transactional Website</title>
+
+  <!--===== Favicon =====-->
+  <link rel="icon" href="../assets/favicon.svg" type="image/x-icon">
+
+  <!--===== Swiper =====-->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+  <!--===== Font Awesome =====-->
+  <script src="https://kit.fontawesome.com/83088d1172.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+  <main-header></main-header>
+
+  <main class="pb-24">
+    <section>
+      <div class="mx-auto w-10/12 flex pb-8">
+        <img class="pr-2" src="../assets/images/arrow-back-icon.svg" alt="">
+        <p>Back</p>
+      </div>
+      <div class="mx-auto w-10/12 grid grid-cols-[1fr_3fr] gap-x-4 pb-8">
+        <p class="text-[25px] font-bold self-end leading-none">
+          Certificate Details
+        </p>
+        <div>
+          <div class="bg-background-primary py-2 px-3 w-fit flex gap-x-4 rounded-[8px]">
+            <button class="text-font-primary text-[18px] font-medium bg-white py-2 px-2.5 rounded-[6px]">
+              Certificate
+            </button>
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+              Claims
+            </button>
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+              Payment
+            </button>
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+              Document
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="mx-auto w-10/12 grid grid-cols-[1fr_3fr] gap-x-4">
+        <div>
+
+          <!-- General Takaful -->
+          <div class="pb-8">
+            <div class="flex">
+              <img class="pr-2 -translate-y-1" src="../assets/images/general-takaful-icon.svg" alt="">
+              <p class="text-font-primary text-[18px] font-bold">
+                General Takaful
+              </p>
+            </div>
+            <!-- To add padding below here if needed -->
+            <div class="border-[#EEEEEE] border-l-[1px]">
+              <!-- This translate will produce some frontend "bugs", to perfect later -->
+              <div class="translate-y-[15px]">
+                <div class="py-3 px-4 rounded-[12px] bg-background-primary ml-4">
+                  <p class="text-[18px]">
+                    <span class="text-font-primary font-bold">Motor - </span>
+                    <span class="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p class="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+                <div class="py-3 px-4 rounded-[12px] ml-4">
+                  <p class="text-[18px]">
+                    <span class="text-font-primary font-bold">Motor - </span>
+                    <span class="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p class="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+                <div class="py-3 px-4 rounded-[12px] ml-4">
+                  <p class="text-[18px]">
+                    <span class="text-font-primary font-bold">Motor - </span>
+                    <span class="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p class="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End General Takaful -->
+
+          <!-- Family Takaful -->
+          <div>
+            <div class="flex">
+              <img class="pr-2 -translate-y-1" src="../assets/images/family-takaful-icon.svg" alt="">
+              <p class="text-font-primary text-[18px] font-bold">
+                Family Takaful
+              </p>
+            </div>
+            <!-- To add padding below here if needed -->
+            <div class="border-[#EEEEEE] border-l-[1px]">
+              <!-- This translate will produce some frontend "bugs", to perfect later -->
+              <div class="translate-y-[15px]">
+                <div class="py-3 px-4 rounded-[12px] ml-4">
+                  <p class="text-[18px]">
+                    <span class="text-font-primary font-bold">Takaful - </span>
+                    <span class="text-font-secondary">Medicard</span>
+                  </p>
+                  <p class="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+                <div class="py-3 px-4 rounded-[12px] ml-4">
+                  <p class="text-[18px]">
+                    <span class="text-font-primary font-bold">Takaful - </span>
+                    <span class="text-font-secondary">Term</span>
+                  </p>
+                  <p class="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- End Family Takaful -->
+
+        </div>
+
+        <div class="px-6 py-8 custom-shadow rounded-[16px]">
+
+          <!--===== First collapsible =====-->
+          <div class="border-b-[1px] border-[#EEEEEE] certificate-padding active">
+            <!-- Collapsible button -->
+            <div class="flex justify-between pb-4 certificate-collapsible">
+              <p class="text-font-primary text-[18px] font-bold">Certificate Details</p>
+              <img src="../assets/images/minus-icon.svg" alt="">
+            </div>
+
+            <!-- Collapsible content -->
+            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Certificate No.
+                </p>
+                <p class="text-font-primary font-semibold">
+                  TMMC0000829/V0499577
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Product Name
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Kaotim Motorcycle
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Vehicle No.
+                </p>
+                <p class="text-font-primary font-semibold">
+                  JQV6531
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Vehicle Model
+                </p>
+                <p class="text-font-primary font-semibold">
+                  SYM Jet Power
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  NCD(%)
+                </p>
+                <p class="text-font-primary font-semibold">
+                  0.00
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Sum Covered (RM)
+                </p>
+                <p class="text-font-primary font-semibold">
+                  1,400
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Effective Date
+                </p>
+                <p class="text-font-primary font-semibold">
+                  11/08/2023
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Expiry Date
+                </p>
+                <p class="text-font-primary font-semibold">
+                  10/08/2024
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Details of Branch
+                </p>
+                <p class="text-font-primary font-semibold">
+                  MYCC Menara Takaful Malaysia
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Excess (RM)
+                </p>
+                <p class="text-font-primary font-semibold">
+                  0
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!--===== Second collapsible =====-->
+          <div class="pt-6 border-b-[1px] border-[#EEEEEE] certificate-padding active">
+            <!-- Collapsible button -->
+            <div class="flex justify-between pb-4 certificate-collapsible">
+              <p class="text-font-primary text-[18px] font-bold">Participant Details</p>
+              <img src="../assets/images/minus-icon.svg" alt="">
+            </div>
+
+            <!-- Collapsible content -->
+            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Full Name
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Ismail Abu bin Mamat
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Phone No.
+                </p>
+                <p class="text-font-primary font-semibold">
+                  0123456789
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Identification No.
+                </p>
+                <p class="text-font-primary font-semibold">
+                  601112-01-5543
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Gender
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Male
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Email
+                </p>
+                <p class="text-font-primary font-semibold">
+                  ismail.abu20@gmail.com
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Marital Status
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Married
+                </p>
+              </div>
+
+              <div class="text-[18px] col-span-2">
+                <p class="text-font-secondary">
+                  Address Line 1
+                </p>
+                <p class="text-font-primary font-semibold">
+                  No 100-2-G, Casadera Apartment
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Address Line 2
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Persiaran Margosa
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Address Line 3
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Jalan PJU/9
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Postcode
+                </p>
+                <p class="text-font-primary font-semibold">
+                  52200
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  City
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Bandar Sri Damansara
+                </p>
+              </div>
+
+              <div class="text-[18px] col-span-2">
+                <p class="text-font-secondary">
+                  State
+                </p>
+                <p class="text-font-primary font-semibold">
+                  Kuala Lumpur
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+          <!--===== Third collapsible =====-->
+          <div class="pt-6 border-b-[1px] border-[#EEEEEE] certificate-padding active">
+            <!-- Collapsible button -->
+            <div class="flex justify-between pb-4 certificate-collapsible">
+              <p class="text-font-primary text-[18px] font-bold">Contribution Details</p>
+              <img src="../assets/images/minus-icon.svg" alt="">
+            </div>
+
+            <!-- Collapsible content -->
+            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Basic Contribution
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-primary font-bold">
+                  RM1073.47
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-primary">
+                  No Claim Discount (38.33%)
+                </p>
+              </div>
+
+
+              <div class="text-[18px]">
+                <p class="text-primary font-bold">
+                  -RM411.46
+                </p>
+              </div>
+
+              <!-- Width below will not be responsive! Find a better solution -->
+              <div class="border-b-[1px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Base Contribution
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-primary font-bold">
+                  RM662.01
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Service Tax (6%)
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-primary font-bold">
+                  RM36.83
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-secondary">
+                  Stamp Duty
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-font-primary font-bold">
+                  RM10.00
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-primary">
+                  Rebate (10%)
+                </p>
+              </div>
+
+              <div class="text-[18px]">
+                <p class="text-primary font-bold">
+                  -RM70.88
+                </p>
+              </div>
+
+              <div class="border-b-[1px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
+
+              <div class="text-[18px]">
+                <p class="text-font-primary">
+                  Add On
+                </p>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <main-footer></main-footer>
+
+  <!-- Header and Footer -->
+  <script src="../js/layout.js"></script>
+
+  <!-- Include styles -->
+  <script src="../js/masterStyle.js"></script>
+
+  <!-- Swiper JS -->
+  <script type="module" src="../js/swiper.js"></script>
+
+  <!-- Collapsible -->
+  <script type="module" src="../js/collapsible.js"></script>
+
+</body>
+
+</html>

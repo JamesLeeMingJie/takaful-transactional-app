@@ -3,8 +3,11 @@ section {
   padding-bottom: 5rem;
 }
 
-
 /* Utilities */
+.custom-shadow {
+  box-shadow: 0px 4px 8px 2px #0000000D;
+}
+
 input {
   width: 100%;
   border: 1px solid #BBBBBB;

@@ -1,0 +1,18 @@
+.certificate-content {
+  overflow: hidden;
+  transition: max-height .5s ease-in-out;
+  max-height: 0;
+}
+
+.certificate-content.active {
+  max-height: 800px;
+}
+
+.certificate-padding {
+  padding-bottom: 0;
+  transition: padding-bottom .6s ease-in-out;
+}
+
+.certificate-padding.active {
+  padding-bottom: 1.5rem;
+}
