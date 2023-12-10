@@ -6,3 +6,14 @@ const loginSwiper = new Swiper(".loginSwiper", {
     el: ".swiper-pagination",
   },
 });
+
+const certificateSwiper = new Swiper(".certificateSwiper", {
+  pagination: {
+    el: ".swiper-pagination",
+    type: "fraction",
+  },
+  navigation: {
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev",
+  },
+});

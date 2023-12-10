@@ -14,6 +14,13 @@
 
   <!--===== Font Awesome =====-->
   <script src="https://kit.fontawesome.com/83088d1172.js" crossorigin="anonymous"></script>
+
+  <!--===== Date Range Picker =====-->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
 </head>
 
 <body>
@@ -26,30 +33,36 @@
         <img class="pr-2" src="../assets/images/arrow-back-icon.svg" alt="">
         <p>Back</p>
       </div>
+
       <div class="mx-auto w-10/12 grid grid-cols-[1fr_3fr] gap-x-4 pb-8">
         <p class="text-[25px] font-bold self-end leading-none">
           Certificate Details
         </p>
         <div>
           <div class="bg-background-primary py-2 px-3 w-fit flex gap-x-4 rounded-[8px]">
-            <button class="text-font-primary text-[18px] font-medium bg-white py-2 px-2.5 rounded-[6px]">
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px] tab-links"
+              onclick="certificateDetailsTab(event, 'certificate')" id="defaultTab">
               Certificate
             </button>
-            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px] tab-links"
+              onclick="certificateDetailsTab(event, 'claims')">
               Claims
             </button>
-            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px] tab-links"
+              onclick="certificateDetailsTab(event, 'payment')">
               Payment
             </button>
-            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]">
+            <button class="text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px] tab-links"
+              onclick="certificateDetailsTab(event, 'document')">
               Document
             </button>
           </div>
         </div>
       </div>
-      <div class="mx-auto w-10/12 grid grid-cols-[1fr_3fr] gap-x-4">
-        <div>
 
+      <div class="mx-auto w-10/12 grid grid-cols-[1fr_3fr] gap-x-4">
+        <!--===== Left column =====-->
+        <div>
           <!-- General Takaful -->
           <div class="pb-8">
             <div class="flex">
@@ -128,335 +141,692 @@
             </div>
           </div>
           <!-- End Family Takaful -->
-
         </div>
+        <!--===== End Left column =====-->
 
+        <!--===== Right column =====-->
         <div class="px-6 py-8 custom-shadow rounded-[16px]">
+          <!-- Certificate tab -->
+          <div id="certificate" class="tab-content tab-content-animation">
+            <!--===== First collapsible =====-->
+            <div class="border-b-[1.5px] border-[#EEEEEE] certificate-padding active">
+              <!-- Collapsible button -->
+              <div class="flex justify-between pb-6 certificate-collapsible">
+                <p class="text-font-primary text-[18px] font-bold">Certificate Details</p>
+                <img src="../assets/images/minus-icon.svg" alt="">
+              </div>
 
-          <!--===== First collapsible =====-->
-          <div class="border-b-[1px] border-[#EEEEEE] certificate-padding active">
-            <!-- Collapsible button -->
-            <div class="flex justify-between pb-4 certificate-collapsible">
-              <p class="text-font-primary text-[18px] font-bold">Certificate Details</p>
-              <img src="../assets/images/minus-icon.svg" alt="">
+              <!-- Collapsible content -->
+              <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Certificate No.
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    TMMC0000829/V0499577
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Product Name
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Kaotim Motorcycle
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Vehicle No.
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    JQV6531
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Vehicle Model
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    SYM Jet Power
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    NCD(%)
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    0.00
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Sum Covered (RM)
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    1,400
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Effective Date
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    11/08/2023
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Expiry Date
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    10/08/2024
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Details of Branch
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    MYCC Menara Takaful Malaysia
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Excess (RM)
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    0
+                  </p>
+                </div>
+
+              </div>
             </div>
+            <!--===== End First collapsible =====-->
 
-            <!-- Collapsible content -->
-            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Certificate No.
-                </p>
-                <p class="text-font-primary font-semibold">
-                  TMMC0000829/V0499577
-                </p>
+            <!--===== Second collapsible =====-->
+            <div class="pt-6 border-b-[1.5px] border-[#EEEEEE] certificate-padding active">
+              <!-- Collapsible button -->
+              <div class="flex justify-between pb-6 certificate-collapsible">
+                <p class="text-font-primary text-[18px] font-bold">Participant Details</p>
+                <img src="../assets/images/minus-icon.svg" alt="">
               </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Product Name
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Kaotim Motorcycle
-                </p>
+              <!-- Collapsible content -->
+              <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Full Name
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Ismail Abu bin Mamat
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Phone No.
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    0123456789
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Identification No.
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    601112-01-5543
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Gender
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Male
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Email
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    ismail.abu20@gmail.com
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Marital Status
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Married
+                  </p>
+                </div>
+
+                <div class="text-[18px] col-span-2">
+                  <p class="text-font-secondary">
+                    Address Line 1
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    No 100-2-G, Casadera Apartment
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Address Line 2
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Persiaran Margosa
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Address Line 3
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Jalan PJU/9
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Postcode
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    52200
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    City
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Bandar Sri Damansara
+                  </p>
+                </div>
+
+                <div class="text-[18px] col-span-2">
+                  <p class="text-font-secondary">
+                    State
+                  </p>
+                  <p class="text-font-primary font-semibold">
+                    Kuala Lumpur
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <!--===== End Second collapsible =====-->
+
+            <!--===== Third collapsible =====-->
+            <div class="pt-6 border-b-[1.5px] border-[#EEEEEE] certificate-padding active">
+              <!-- Collapsible button -->
+              <div class="flex justify-between pb-6 certificate-collapsible">
+                <p class="text-font-primary text-[18px] font-bold">Contribution Details</p>
+                <img src="../assets/images/minus-icon.svg" alt="">
               </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Vehicle No.
-                </p>
-                <p class="text-font-primary font-semibold">
-                  JQV6531
-                </p>
+              <!-- Collapsible content -->
+              <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Basic Contribution
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-primary font-bold">
+                    RM1073.47
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-primary">
+                    No Claim Discount (38.33%)
+                  </p>
+                </div>
+
+
+                <div class="text-[18px]">
+                  <p class="text-primary font-bold">
+                    -RM411.46
+                  </p>
+                </div>
+
+                <!-- Width below will not be responsive! Find a better solution -->
+                <div class="border-b-[1.5px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Base Contribution
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-primary font-bold">
+                    RM662.01
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Service Tax (6%)
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-primary font-bold">
+                    RM36.83
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Stamp Duty
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-primary font-bold">
+                    RM10.00
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-primary">
+                    Rebate (10%)
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-primary font-bold">
+                    -RM70.88
+                  </p>
+                </div>
+
+                <div class="border-b-[1.5px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
+
+                <div class="text-[18px] col-span-2">
+                  <p class="text-font-primary">
+                    Add On
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Legal liability to passengers
+                  </p>
+                </div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-primary font-bold">
+                    RM250
+                  </p>
+                </div>
+
+                <div class="border-b-[1.5px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
+
+                <div class="text-[18px]">
+                  <p class="text-font-secondary">
+                    Total Contribution
+                  </p>
+                </div>
+
+                <div class="text-[22px]">
+                  <p class="text-font-primary font-bold">
+                    RM887.96
+                  </p>
+                </div>
+
+              </div>
+            </div>
+            <!--===== End Third collapsible =====-->
+
+            <!--===== Fourth collapsible =====-->
+            <div class="pt-6 mb-6 border-b-[1.5px] border-[#EEEEEE] certificate-padding active">
+              <!-- Collapsible button -->
+              <div class="flex justify-between pb-6 certificate-collapsible">
+                <p class="text-font-primary text-[18px] font-bold">List of Rider Coverage</p>
+                <img src="../assets/images/minus-icon.svg" alt="">
               </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Vehicle Model
-                </p>
-                <p class="text-font-primary font-semibold">
-                  SYM Jet Power
-                </p>
-              </div>
+              <!-- Collapsible content -->
+              <div class="certificate-content active">
+                <div class="grid grid-cols-[1fr_2fr_7fr_2fr] gap-x-4 pb-2 pl-2 ">
+                  <div class="text-font-secondary text-[14px]">
+                    No.
+                  </div>
+                  <div class="text-font-secondary text-[14px]">
+                    Endorsement Code
+                  </div>
+                  <div class="text-font-secondary text-[14px]">
+                    Description
+                  </div>
+                  <div class="text-font-secondary text-[14px]">
+                    Sum Covered (RM)
+                  </div>
+                </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  NCD(%)
-                </p>
-                <p class="text-font-primary font-semibold">
-                  0.00
-                </p>
-              </div>
+                <div class="border-b-[2px] border-[#BBBBBB] col-span-2"></div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Sum Covered (RM)
-                </p>
-                <p class="text-font-primary font-semibold">
-                  1,400
-                </p>
-              </div>
+                <div class="swiper certificateSwiper">
+                  <div class="swiper-wrapper">
+                    <!-- First slide -->
+                    <div class="swiper-slide">
+                      <div
+                        class="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Effective Date
-                </p>
-                <p class="text-font-primary font-semibold">
-                  11/08/2023
-                </p>
-              </div>
+                        <!-- First row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            1
+                          </div>
+                          <div>
+                            C200
+                          </div>
+                          <div>
+                            Bike PA Plus-Plan 1
+                          </div>
+                          <div>
+                            5,500
+                          </div>
+                        </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Expiry Date
-                </p>
-                <p class="text-font-primary font-semibold">
-                  10/08/2024
-                </p>
-              </div>
+                        <!-- Second row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            2
+                          </div>
+                          <div>
+                            C057
+                          </div>
+                          <div>
+                            Inclusion of special perils
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Details of Branch
-                </p>
-                <p class="text-font-primary font-semibold">
-                  MYCC Menara Takaful Malaysia
-                </p>
-              </div>
+                        <!-- Third  row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            3
+                          </div>
+                          <div>
+                            C108
+                          </div>
+                          <div>
+                            Legal liability to pillion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
 
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Excess (RM)
-                </p>
-                <p class="text-font-primary font-semibold">
-                  0
-                </p>
-              </div>
+                        <!-- Fourth row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            4
+                          </div>
+                          <div>
+                            C025
+                          </div>
+                          <div>
+                            Strike, Riot & Civil Commotion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+                      </div>
+                    </div>
 
+                    <!-- Second slide -->
+                    <div class="swiper-slide">
+                      <div
+                        class="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+
+                        <!-- First row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            1
+                          </div>
+                          <div>
+                            C200
+                          </div>
+                          <div>
+                            Bike PA Plus-Plan 1
+                          </div>
+                          <div>
+                            5,500
+                          </div>
+                        </div>
+
+                        <!-- Second row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            2
+                          </div>
+                          <div>
+                            C057
+                          </div>
+                          <div>
+                            Inclusion of special perils
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+
+                        <!-- Third  row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            3
+                          </div>
+                          <div>
+                            C108
+                          </div>
+                          <div>
+                            Legal liability to pillion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+
+                        <!-- Fourth row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            4
+                          </div>
+                          <div>
+                            C025
+                          </div>
+                          <div>
+                            Strike, Riot & Civil Commotion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    <!-- Third slide -->
+                    <div class="swiper-slide">
+                      <div
+                        class="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+
+                        <!-- First row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            1
+                          </div>
+                          <div>
+                            C200
+                          </div>
+                          <div>
+                            Bike PA Plus-Plan 1
+                          </div>
+                          <div>
+                            5,500
+                          </div>
+                        </div>
+
+                        <!-- Second row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            2
+                          </div>
+                          <div>
+                            C057
+                          </div>
+                          <div>
+                            Inclusion of special perils
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+
+                        <!-- Third  row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            3
+                          </div>
+                          <div>
+                            C108
+                          </div>
+                          <div>
+                            Legal liability to pillion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+
+                        <!-- Fourth row -->
+                        <div class="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                          <div>
+                            4
+                          </div>
+                          <div>
+                            C025
+                          </div>
+                          <div>
+                            Strike, Riot & Civil Commotion
+                          </div>
+                          <div>
+                            Included
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                  </div>
+
+                  <!-- W-fit and justify-end doesn't work together -->
+                  <div class="flex justify-end">
+                    <div class="flex w-fit rounded-[4px] border-[#E7E7E7] border-[1px]">
+                      <div class="swiper-button-prev p-2"></div>
+                      <div class="border-[#E7E7E7] border-x-[1px] px-4 py-[3px] swiper-pagination"></div>
+                      <div class="swiper-button-next p-2"></div>
+                    </div>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+            <!--===== End Fourth collapsible =====-->
+
+            <p class="text-font-primary text-[18px] font-bold pb-4">
+              Others
+            </p>
+
+            <div class="flex gap-x-2">
+              <button
+                class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+                Download e-Certificate
+              </button>
+              <button
+                class="text-[18px] text-font-secondary border-[1px] border-font-secondary rounded-[30px] py-3 px-6">
+                View Notice of Expiry
+              </button>
             </div>
           </div>
+          <!-- End certificate tab -->
 
-          <!--===== Second collapsible =====-->
-          <div class="pt-6 border-b-[1px] border-[#EEEEEE] certificate-padding active">
-            <!-- Collapsible button -->
-            <div class="flex justify-between pb-4 certificate-collapsible">
-              <p class="text-font-primary text-[18px] font-bold">Participant Details</p>
-              <img src="../assets/images/minus-icon.svg" alt="">
+          <!-- Claims tab -->
+          <div id="claims" class="tab-content tab-content-animation">
+            <!--===== First collapsible =====-->
+            <div class="border-b-[1.5px] border-[#EEEEEE] certificate-padding active">
+              <!-- Collapsible button -->
+              <div class="flex justify-between pb-6 certificate-collapsible">
+                <p class="text-font-primary text-[18px] font-bold">Claim Result</p>
+                <img src="../assets/images/minus-icon.svg" alt="">
+              </div>
+
+              <!-- Collapsible content -->
+              <div class="grid grid-cols-2 gap-y-8 certificate-content active">
+                <div class="relative">
+                  <img class="absolute right-[3%] top-[25%]" src="../assets/images/calendar-icon.svg" alt="">
+                  <input class="pl-2 text-[18px] text-font-secondary" type="text" name="daterange" value="--Choose Date--"></input>
+                </div>
+
+                <p class="text-base text-font-primary col-span-2">
+                  Status: <span class="text-inactive">Pending</span>
+                </p>
+
+                <div class="col-span-2 flex items-center">
+                  <p class="text-[18px] font-semibold text-font-primary pr-12">
+                    To submit or check status claim please click here
+                  </p>
+
+                  <button class="text-[18px] text-primary border-[1px] border-primary rounded-[30px] py-3 px-6 w-fit">
+                    Claim Now
+                  </button>
+                </div>
+
+              </div>
             </div>
-
-            <!-- Collapsible content -->
-            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Full Name
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Ismail Abu bin Mamat
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Phone No.
-                </p>
-                <p class="text-font-primary font-semibold">
-                  0123456789
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Identification No.
-                </p>
-                <p class="text-font-primary font-semibold">
-                  601112-01-5543
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Gender
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Male
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Email
-                </p>
-                <p class="text-font-primary font-semibold">
-                  ismail.abu20@gmail.com
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Marital Status
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Married
-                </p>
-              </div>
-
-              <div class="text-[18px] col-span-2">
-                <p class="text-font-secondary">
-                  Address Line 1
-                </p>
-                <p class="text-font-primary font-semibold">
-                  No 100-2-G, Casadera Apartment
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Address Line 2
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Persiaran Margosa
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Address Line 3
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Jalan PJU/9
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Postcode
-                </p>
-                <p class="text-font-primary font-semibold">
-                  52200
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  City
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Bandar Sri Damansara
-                </p>
-              </div>
-
-              <div class="text-[18px] col-span-2">
-                <p class="text-font-secondary">
-                  State
-                </p>
-                <p class="text-font-primary font-semibold">
-                  Kuala Lumpur
-                </p>
-              </div>
-
-            </div>
+            <!--===== End First collapsible =====-->
           </div>
+          <!-- End claims tab -->
 
-          <!--===== Third collapsible =====-->
-          <div class="pt-6 border-b-[1px] border-[#EEEEEE] certificate-padding active">
-            <!-- Collapsible button -->
-            <div class="flex justify-between pb-4 certificate-collapsible">
-              <p class="text-font-primary text-[18px] font-bold">Contribution Details</p>
-              <img src="../assets/images/minus-icon.svg" alt="">
-            </div>
-
-            <!-- Collapsible content -->
-            <div class="grid grid-cols-2 gap-y-8 certificate-content active">
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Basic Contribution
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-primary font-bold">
-                  RM1073.47
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-primary">
-                  No Claim Discount (38.33%)
-                </p>
-              </div>
-
-
-              <div class="text-[18px]">
-                <p class="text-primary font-bold">
-                  -RM411.46
-                </p>
-              </div>
-
-              <!-- Width below will not be responsive! Find a better solution -->
-              <div class="border-b-[1px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Base Contribution
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-primary font-bold">
-                  RM662.01
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Service Tax (6%)
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-primary font-bold">
-                  RM36.83
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-secondary">
-                  Stamp Duty
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-font-primary font-bold">
-                  RM10.00
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-primary">
-                  Rebate (10%)
-                </p>
-              </div>
-
-              <div class="text-[18px]">
-                <p class="text-primary font-bold">
-                  -RM70.88
-                </p>
-              </div>
-
-              <div class="border-b-[1px] border-[#EEEEEE] col-span-2 w-[63%]"></div>
-
-              <div class="text-[18px]">
-                <p class="text-font-primary">
-                  Add On
-                </p>
-              </div>
-
-            </div>
+          <!-- Payment tab -->
+          <div id="payment" class="tab-content tab-content-animation">
+            Hello from payment
           </div>
+          <!-- End payment tab -->
+
+          <!-- Document tab -->
+          <div id="document" class="tab-content tab-content-animation">
+            Hello from document
+          </div>
+          <!-- End document tab -->
 
         </div>
-
+        <!--===== End Right column =====-->
       </div>
+
     </section>
 
   </main>
@@ -473,7 +843,13 @@
   <script type="module" src="../js/swiper.js"></script>
 
   <!-- Collapsible -->
-  <script type="module" src="../js/collapsible.js"></script>
+  <script src="../js/collapsible.js"></script>
+
+  <!-- Tabs -->
+  <script src="../js/tabs.js"></script>
+
+  <!-- Daterange -->
+  <script src="../js/daterange.js"></script>
 
 </body>
 

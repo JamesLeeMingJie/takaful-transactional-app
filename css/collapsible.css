@@ -1,6 +1,6 @@
 .certificate-content {
   overflow: hidden;
-  transition: max-height .5s ease-in-out;
+  transition: max-height .7s ease;
   max-height: 0;
 }
 
@@ -8,9 +8,10 @@
   max-height: 800px;
 }
 
+/* Find out how to not trigger this unless if it's clicked! */
 .certificate-padding {
   padding-bottom: 0;
-  transition: padding-bottom .6s ease-in-out;
+  transition: padding-bottom .7s ease;
 }
 
 .certificate-padding.active {

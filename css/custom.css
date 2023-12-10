@@ -1,9 +1,14 @@
-/* Spacing */
-section {
-  padding-bottom: 5rem;
+/***** Certificate details *****/
+.alternate-grey-rows> :nth-child(odd) {
+  background: #F7F7F7;
 }
 
-/* Utilities */
+/***** Spacing *****/
+section {
+  padding-bottom: 4rem;
+}
+
+/***** Utilities *****/
 .custom-shadow {
   box-shadow: 0px 4px 8px 2px #0000000D;
 }

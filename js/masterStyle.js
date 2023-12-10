@@ -4,6 +4,8 @@ const cssFiles = [
   "../css/normalize.css",
   "../css/output.css",
   "../css/swiper.css",
+  "../css/tabs.css",
+  "../css/form.css",
 ];
 
 function includeAllStylesheets() {
