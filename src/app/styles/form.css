@@ -1,0 +1,36 @@
+.form-parent {
+  position: relative;
+}
+
+.form-parent input {
+  border: solid 1px #BBBBBB;
+  transition: all .3s ease;
+  padding: 0 15px
+}
+
+.form-parent input:focus {
+  border-color: #BBBBBB;
+}
+
+.form-parent label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: 13px;
+  left: 10px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 10px;
+  color: #767676;
+  transition: all .3s ease
+}
+
+.form-parent input:focus+label,
+.form-parent input:valid+label {
+  font-size: 12px;
+  top: -8px
+}
+
+.form-parent input:focus+label {
+  color: #767676
+}
