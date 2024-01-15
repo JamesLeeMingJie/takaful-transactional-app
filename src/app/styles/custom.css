@@ -35,3 +35,7 @@ input {
   height: 50px;
   border-radius: 5px;
 }
+
+input:focus-visible {
+  @apply outline-none ring ring-primary;
+}
