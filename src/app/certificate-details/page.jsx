@@ -38,7 +38,7 @@ export default function CertificateDetails() {
   // const swiperNextButton = useRef(null);
 
   return (
-    <main className="pb-24">
+    <main>
       <section>
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />

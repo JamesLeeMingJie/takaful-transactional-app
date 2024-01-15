@@ -81,11 +81,14 @@ export default function Home() {
             <p className="text-font-primary text-[32px] font-bold pb-8">Welcome to Customer Portal</p>
             <p className="text-font-primary text-[24px] font-semibold pb-6">Login</p>
             <form action="">
-              <div className="relative">
-                <input id="username" placeholder="920202-06-5105" className="mb-6 px-4 placeholder-black" type="text" name="user-id"></input>
-                {/* <label for="username" className="">Hello world</label> */}
+              <div className="form-parent">
+                <input id="username" type="text" name="user-id"></input>
+                <label htmlFor="username">User ID</label>
               </div>
-              <input placeholder="***********" className="mb-10 px-4 placeholder-black" type="password" name="password"></input>
+              <div className="form-parent">
+                <input type="password" name="password"></input>
+                <label htmlFor="password">Password</label>
+              </div>
               <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
                 type="submit">Login</button>
             </form>

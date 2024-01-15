@@ -12,6 +12,7 @@ import telephoneIcon from '@/icons/telephone-icon.svg';
 import emailIcon from '@/icons/email-icon.svg';
 import buttonArrow from '@/icons/button-arrow-icon.svg';
 import blueArrow from '@/icons/blue-arrow-icon.svg';
+import questionIcon from '@/icons/question-icon.svg';
 
 // Swiper components
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -82,16 +83,33 @@ export default function Register() {
             <p className="text-font-primary text-[32px] font-bold pb-8">Register</p>
             <p className="text-font-primary text-[24px] font-semibold pb-6">Register as new user</p>
             <form action="">
-              <div className="grid relative grid-cols-3 gap-x-4">
-                <input placeholder="NRIC" className="mb-6 px-4 placeholder-black col-span-1" type="text" name="id-type"></input>
-                <input placeholder="920202-06-5105" className="mb-6 px-4 placeholder-black col-span-2" type="text" name="user-id"></input>
+              <div className="grid grid-cols-3 gap-x-4">
+                <div className="form-parent col-span-1">
+                  <select className="" name="" id="" value="hello">
+                    <option value="NRIC">NRIC</option>
+                  </select>
+                  <label htmlFor="id-type">Identification Type</label>
+                </div>
+                <div className="form-parent col-span-2">
+                  <input type="text" name="user-id"></input>
+                  <label htmlFor="identification-no">Identification No.</label>
+                </div>
               </div>
 
-              <input placeholder="Email" className="mb-6 px-4 placeholder-black" type="text" name="email"></input>
+              <div className="form-parent">
+                <input type="text" name="email"></input>
+                <label htmlFor="email">Email</label>
+              </div>
 
-              <input placeholder="0123456789" className="mb-6 px-4 placeholder-black" type="text" name="phone-number"></input>
+              <div className="form-parent">
+                <input type="text" name="phone-number"></input>
+                <label htmlFor="phone-number">Phone Number</label>
+              </div>
 
-              <input placeholder="Bird" className="mb-6 px-4 placeholder-black" type="text" name="user-id"></input>
+              <div className="form-parent">
+                <input type="text" name="security-phrase"></input>
+                <label className="flex items-center gap-x-1" htmlFor="security-phrase">Security Phrase <Image src={questionIcon} alt="" /> </label>
+              </div>
 
               <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
                 type="submit">Register</button>

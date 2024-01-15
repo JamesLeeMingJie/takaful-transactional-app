@@ -81,14 +81,22 @@ export default function Home() {
             <p className="text-font-primary text-[32px] font-bold pb-8">Forgot your password</p>
             <p className="text-font-primary text-[24px] font-semibold pb-6">Reset your password/username</p>
             <form action="">
-              <div className="relative">
-                <input placeholder="Email" className="mb-6 px-4 placeholder-black" type="text" name="email"></input>
-                {/* <label for="username" className="">Hello world</label> */}
+              <div className="form-parent">
+                <input type="text" name="email"></input>
+                <label for="email" className="">Email</label>
               </div>
 
-              <div className="grid relative grid-cols-3 gap-x-4">
-                <input placeholder="NRIC" className="mb-6 px-4 placeholder-black col-span-1" type="text" name="id-type"></input>
-                <input placeholder="920202-06-5105" className="mb-6 px-4 placeholder-black col-span-2" type="text" name="user-id"></input>
+              <div className="grid grid-cols-3 gap-x-4">
+                <div className="form-parent col-span-1">
+                  <select className="" name="" id="" value="hello">
+                    <option value="NRIC">NRIC</option>
+                  </select>
+                  <label htmlFor="id-type">Identification Type</label>
+                </div>
+                <div className="form-parent col-span-2">
+                  <input type="text" name="user-id"></input>
+                  <label htmlFor="identification-no">Identification No.</label>
+                </div>
               </div>
 
               <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"

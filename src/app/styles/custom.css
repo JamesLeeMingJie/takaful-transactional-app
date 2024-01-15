@@ -37,5 +37,5 @@ input {
 }
 
 input:focus-visible {
-  @apply outline-none ring ring-primary;
+  @apply outline-none ring-1 ring-primary;
 }
