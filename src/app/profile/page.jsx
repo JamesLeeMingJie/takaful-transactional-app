@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 //Assets
 import arrowBackIcon from '@/icons/arrow-back-icon.svg';
@@ -9,12 +10,12 @@ export default function Profile() {
         <main>
             <section className="pb-0 mt-8">
                 <div className=" mx-auto w-10/12 flex items-center pb-10 gap-1">
-                    <Image className="w-5 h-5 " src={arrowBackIcon} alt="" />
-                    <a href="/homepage" className="text-16">
+                    <Image className="w-5 h-5" src={arrowBackIcon} alt="" />
+                    <Link href="/homepage" className="text-base text-font-primary hover:no-underline hover:text-font-primary">
                         Back to Home
-                    </a>
+                    </Link>
                 </div>
-                <p className="mx-auto w-10/12 text-[25px] font-bold pb-10">
+                <p className="mx-auto w-10/12 text-[25px] font-bold pb-10 text-black">
                     Profile
                 </p>
             </section>
@@ -29,7 +30,7 @@ export default function Profile() {
 
                                 </div>
 
-                                <div className="text-xl pb-2">
+                                <div className="text-xl pb-2 text-font-primary">
                                     Ismail Abu
                                 </div>
 
@@ -46,96 +47,96 @@ export default function Profile() {
 
                     <section className="md:w-4/5">
 
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-y-7 gap-x-5  mx-5 md:mx-9 px-4 pt-7 md:pb-3 md:pt-8 md:px-8 relative shadow-lg bg-primary-white bg-opacity-0 border-transparent rounded-2xl">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-7 gap-x-5  mx-5 md:mx-9 px-4 pt-7 md:pb-3 md:pt-8 md:px-8 relative shadow-lg bg-primary-white bg-opacity-0 border-transparent rounded-2xl">
 
                             {/** first row */}
-                            <div class="col-span-2">
-                                <div class="flex items-center mt-5">
-                                    <h4 class="font-bold text-base sm:text-[22px]">Personal Details</h4>
-                                    <div class="ml-4 mr-1 border-t border-secondary-gray flex-grow"></div>
-                                    <p class="text-primary font-normal mx-1">Edit</p>
-                                    <button class="ml-0.5"><svg class="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></button>
+                            <div className="col-span-2">
+                                <div className="flex items-center mt-5">
+                                    <h4 className="font-bold text-base sm:text-[22px] text-font-primary">Personal Details</h4>
+                                    <div className="ml-4 mr-1 border-t border-secondary-gray flex-grow"></div>
+                                    <p className="text-primary font-normal mx-1">Edit</p>
+                                    <button className="ml-0.5"><svg className="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></button>
                                 </div>
 
                             </div>
 
                             {/** second row */}
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-light text-font-secondary">Full Name</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">Ismail Abu bin Mamat</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-light text-font-secondary">Full Name</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">Ismail Abu bin Mamat</p>
                             </div>
 
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class=" font-light text-font-secondary">Phone No.</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">0123456789</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className=" font-light text-font-secondary">Phone No.</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">0123456789</p>
                             </div>
 
                             {/** third row */}
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class=" font-light text-font-secondary">Identification No.</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">601112-01-5543</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className=" font-light text-font-secondary">Identification No.</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">601112-01-5543</p>
                             </div>
 
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class=" font-light text-font-secondary">Gender</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">Male</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className=" font-light text-font-secondary">Gender</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">Male</p>
 
                             </div>
 
                             {/** fourth row */}
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">Email</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">ismail.abu20@gmail.com</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">Email</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">ismail.abu20@gmail.com</p>
                             </div>
 
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">Marital Status</p>
-                                <p class="font-semibold mt-1.5 text-font-primary">Married</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">Marital Status</p>
+                                <p className="font-semibold mt-1.5 text-font-primary">Married</p>
                             </div>
 
                             {/** 5th row */}
-                            <div class="col-span-2">
-                                <div class="flex items-center mt-5">
-                                    <h4 class="font-bold text-base sm:text-[22px]">Address Details</h4>
-                                    <div class="ml-4 mr-1 border-t border-secondary-gray flex-grow"></div>
-                                    <p class="text-primary font-normal mx-1">Edit</p>
-                                    <button class="ml-0.5"><svg class="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></button>
+                            <div className="col-span-2">
+                                <div className="flex items-center mt-5">
+                                    <h4 className="font-bold text-base sm:text-[22px] text-font-primary">Address Details</h4>
+                                    <div className="ml-4 mr-1 border-t border-secondary-gray flex-grow"></div>
+                                    <p className="text-primary font-normal mx-1">Edit</p>
+                                    <button className="ml-0.5"><svg className="h-4 w-4 text-primary" width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">  <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />  <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" /></svg></button>
                                 </div>
 
                             </div>
 
                             {/** 6th row */}
-                            <div class="col-span-2 text-[18px]">
-                                <p class="font-normal text-font-secondary">Address Line 1</p>
-                                <p class="font-semibold mt-1.5">No 100-2-G, Casadera Apartment</p>
+                            <div className="col-span-2 text-[18px]">
+                                <p className="font-normal text-font-secondary">Address Line 1</p>
+                                <p className="font-semibold mt-1.5">No 100-2-G, Casadera Apartment</p>
                             </div>
 
                             {/** 7th row */}
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">Address Line 2</p>
-                                <p class="font-semibold mt-1.5">Persiaran Margosa</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">Address Line 2</p>
+                                <p className="font-semibold mt-1.5">Persiaran Margosa</p>
                             </div>
 
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">Address Line 3</p>
-                                <p class="font-semibold mt-1.5">Jalan PJU/9</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">Address Line 3</p>
+                                <p className="font-semibold mt-1.5">Jalan PJU/9</p>
                             </div>
 
                             {/** 8th row */}
-                            <div class="col-span-2 sm:col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">Postcode</p>
-                                <p class="font-semibold mt-1.5">52200</p>
+                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">Postcode</p>
+                                <p className="font-semibold mt-1.5">52200</p>
                             </div>
 
-                            <div class="col-span-1 text-[18px]">
-                                <p class="font-normal text-font-secondary">City</p>
-                                <p class="font-semibold mt-1.5">Bandar Sri Damansara</p>
+                            <div className="col-span-1 text-[18px]">
+                                <p className="font-normal text-font-secondary">City</p>
+                                <p className="font-semibold mt-1.5">Bandar Sri Damansara</p>
                             </div>
 
                             {/** 9th row */}
-                            <div class="col-span-2 mb-6 text-[18px]">
-                                <p class="font-normal text-font-secondary">State</p>
-                                <p class="font-semibold mt-1.5">Kuala Lumpur</p>
+                            <div className="col-span-2 mb-6 text-[18px]">
+                                <p className="font-normal text-font-secondary">State</p>
+                                <p className="font-semibold mt-1.5">Kuala Lumpur</p>
                             </div>
 
                         </div>

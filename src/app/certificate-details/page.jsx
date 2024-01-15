@@ -26,6 +26,11 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 
+// Rsuite
+import { DateRangePicker, Stack } from "rsuite";
+
+// Rsuite styles
+
 export default function CertificateDetails() {
   const [tab, setTab] = useState("certificate");
 
@@ -42,11 +47,11 @@ export default function CertificateDetails() {
       <section>
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p>Back</p>
+          <p className="text-font-primary">Back</p>
         </div>
 
         <div className="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-x-4 pb-8 gap-y-4 md:gap-y-0">
-          <p className="text-[25px] font-bold self-end leading-none">
+          <p className="text-[25px] font-bold self-end leading-none text-black">
             Certificate Details
           </p>
           <div>
@@ -156,7 +161,7 @@ export default function CertificateDetails() {
           {/* ===== End Left column ===== */}
 
           {/* ===== Right column ===== */}
-          <div className="px-6 py-8 custom-shadow rounded-[16px]">
+          <div className="px-4 sm:px-6 py-8 custom-shadow rounded-[16px]">
             {/* Certificate tab */}
 
             {/* tab-content-animation */}
@@ -602,7 +607,7 @@ export default function CertificateDetails() {
                 <div className="pt-6 mb-6 border-b-[1.5px] border-[#EEEEEE]">
                   <Collapsible title={"List of Rider Coverage"}>
                     <div>
-                      <div className="grid grid-cols-[1fr_2fr_7fr_2fr] gap-x-4 pb-2 pl-4">
+                      <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] items-center gap-4 p-4 sm:pt-0 sm:pr-0 sm:pl-4 text-center sm:text-left">
                         <div className="text-font-secondary text-[14px]">
                           No.
                         </div>
@@ -626,10 +631,10 @@ export default function CertificateDetails() {
                       }}>
                         <SwiperSlide>
                           <div
-                            className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base sm:text-[18px] font-semibold items-center pb-8">
 
                             {/* First row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 1
                               </div>
@@ -645,7 +650,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Second row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 2
                               </div>
@@ -661,7 +666,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Third row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 3
                               </div>
@@ -677,7 +682,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Fourth row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 4
                               </div>
@@ -695,10 +700,10 @@ export default function CertificateDetails() {
                         </SwiperSlide>
                         <SwiperSlide>
                           <div
-                            className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base sm:text-[18px] font-semibold items-center pb-8">
 
                             {/* First row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 1
                               </div>
@@ -714,7 +719,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Second row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 2
                               </div>
@@ -730,7 +735,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Third row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 3
                               </div>
@@ -746,7 +751,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Fourth row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
                               <div>
                                 4
                               </div>
@@ -805,11 +810,9 @@ export default function CertificateDetails() {
                   </div>
 
                   {/* Collapsible content */}
-                  <div className="grid grid-cols-2 gap-y-8">
-                    <div className="form-parent overflow-visible">
-                      <Image className="absolute right-[3%] top-[25%]" src={calendarIcon} alt="" />
-                      <input id="daterangepicker" className="pl-2 text-[18px] text-font-secondary" type="text" name="daterange"
-                        value="--Choose Date--"></input>
+                  <div className="grid grid-cols-2 gap-y-8 pb-8">
+                    <div className="form-parent-filter overflow-visible">
+                      <DateRangePicker showOneCalendar className="w-[400px] relative z-[1]" size="lg" placeholder="--Choose Date--" />
                       <label for="daterangepicker">Filter by Date</label>
                     </div>
 
@@ -845,14 +848,10 @@ export default function CertificateDetails() {
                     <p className="text-font-primary text-[18px] font-bold">Payment & Receipts</p>
                   </div>
 
-
-
                   {/* Collapsible content */}
                   <div className="grid grid-cols-2 gap-y-8 pb-8">
-                    <div className="form-parent overflow-visible">
-                      <Image className="absolute right-[3%] top-[25%]" src={calendarIcon} alt="" />
-                      <input id="daterangepicker" className="pl-2 text-[18px] text-font-secondary" type="text" name="daterange"
-                        value="--Choose Date--"></input>
+                    <div className="form-parent-filter overflow-visible">
+                      <DateRangePicker showOneCalendar className="w-[400px] relative z-[1]" size="lg" placeholder="--Choose Date--" />
                       <label for="daterangepicker">Filter by Date</label>
                     </div>
                   </div>
@@ -892,7 +891,7 @@ export default function CertificateDetails() {
                     className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
 
                     {/* First row */}
-                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                    <div className="grid grid-cols-4 h-full items-center gap-x-4 pl-4">
                       <div>
                         1
                       </div>
@@ -908,7 +907,7 @@ export default function CertificateDetails() {
                     </div>
 
                     {/* Second row */}
-                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                    <div className="grid grid-cols-4 h-full items-center gap-x-4 pl-4">
                       <div>
                         2
                       </div>
@@ -924,7 +923,7 @@ export default function CertificateDetails() {
                     </div>
 
                     {/* Third row */}
-                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                    <div className="grid grid-cols-4 h-full items-center gap-x-4 pl-4">
                       <div>
                         3
                       </div>
@@ -940,7 +939,7 @@ export default function CertificateDetails() {
                     </div>
 
                     {/* Fourth row */}
-                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                    <div className="grid grid-cols-4 h-full items-center gap-x-4 pl-4">
                       <div>
                         4
                       </div>

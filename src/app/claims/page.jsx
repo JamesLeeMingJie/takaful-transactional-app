@@ -28,7 +28,7 @@ export default function Claims() {
       <section>
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p>Back</p>
+          <p className="text-font-primary">Back</p>
         </div>
         <p className="mx-auto w-10/12 text-[25px] font-bold pb-8">
           Claims

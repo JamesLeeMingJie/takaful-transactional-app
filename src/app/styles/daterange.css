@@ -1,0 +1,5 @@
+@import "rsuite/dist/rsuite.min.css";
+
+.rs-stack-item {
+  z-index: 2;
+}

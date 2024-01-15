@@ -12,7 +12,7 @@ export default function Footer() {
   const pathname = usePathname();
 
   return (
-    <footer className="bg-background-primary z-10">
+    <footer className="bg-background-primary z-[1]">
       <div className="text-center text-font-secondary py-6 flex flex-col justify-center w-10/12 mx-auto relative">
         {pathname == "/homepage" ? <Image className="absolute top-0 right-0 translate-y-[-60%] sm:translate-y-[-45%]" src={messageWithColor} alt="" /> : ""}
         <p className="pb-4 sm:pb-2">Security | Terms & Conditions | Privacy Notice | Customer Service Charter</p>

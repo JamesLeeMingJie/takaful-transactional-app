@@ -3,6 +3,10 @@
   margin-bottom: 1.5rem;
 }
 
+.form-parent-filter {
+  position: relative;
+}
+
 .form-parent input {
   border: solid 1px #D9D9D9;
   transition: all .3s ease;
@@ -40,11 +44,38 @@
   pointer-events: none;
 }
 
-.form-parent input:focus+label {
+.form-parent input:focus+label,
+.form-item input:valid+label {
   font-size: 12px;
-  top: -8px
+  top: -8px;
+}
+
+.form-parent-filter label {
+  position: absolute;
+  cursor: text;
+  z-index: 2;
+  top: -8px;
+  left: 10px;
+  font-size: 12px;
+  background: #fff;
+  padding: 0 10px;
+  color: #767676;
+  transition: all .3s ease;
+  pointer-events: none;
 }
 
 .form-parent input:focus+label {
   color: #767676
+}
+
+.focused {
+  top: -8px !important;
+}
+
+select {
+  outline-color: #DA00FF !important;
+}
+
+select option {
+  outline-color: transparent !important;
 }

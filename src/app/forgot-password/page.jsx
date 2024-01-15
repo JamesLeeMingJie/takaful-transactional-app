@@ -1,5 +1,7 @@
 "use client"
 
+import { useState } from "react";
+
 // Components
 import Image from "next/image";
 import Link from "next/link";
@@ -21,7 +23,19 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
-export default function Home() {
+export default function ForgotPassword() {
+  const [idType, setIdType] = useState('');
+  const [isFocus_1, setIsFocus_1] = useState(false);
+  const [isFocus_2, setIsFocus_2] = useState(false);
+
+  function handleInputChange_1(e) {
+    e.target.value != "" ? setIsFocus_1(true) : setIsFocus_1(false)
+  }
+
+  function handleInputChange_2(e) {
+    e.target.value != "" ? setIsFocus_2(true) : setIsFocus_2(false)
+  }
+
   return (
     <main>
       <Image className="absolute top-0 right-0 z-1" src={kaotimBackgroundImage} alt="" />
@@ -48,7 +62,7 @@ export default function Home() {
 
             <div className="mt-4 flex justify-center">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 sm:gap-y-0">
-                <div className="shadow-lg p-4 rounded-[8px] grid justify-center w-fit">
+                <div className="shadow-lg p-4 rounded-[8px] grid justify-center w-fit bg-white">
                   <div className="grid grid-cols-[30px_1fr] gap-x-2 items-center">
                     <Image src={customerServiceIcon} alt="Human Support" />
                     <p className="text-base font-medium text-font-primary">Customer Service</p>
@@ -61,7 +75,7 @@ export default function Home() {
                   </div>
                 </div>
 
-                <div className="shadow-lg p-4 rounded-[8px] grid justify-center w-full">
+                <div className="shadow-lg p-4 rounded-[8px] grid justify-center w-full bg-white">
                   <div className="grid grid-cols-[30px_1fr] gap-x-4 items-center">
                     <Image src={emailIcon} alt="Email Icon" />
                     <p className="text-base font-medium text-font-primary">Email</p>
@@ -82,20 +96,23 @@ export default function Home() {
             <p className="text-font-primary text-[24px] font-semibold pb-6">Reset your password/username</p>
             <form action="">
               <div className="form-parent">
-                <input type="text" name="email"></input>
-                <label for="email" className="">Email</label>
+                <input type="text" name="email" onChange={handleInputChange_1}></input>
+                <label className={isFocus_1 ? "focused" : ""} htmlFor="email">Email</label>
               </div>
 
               <div className="grid grid-cols-3 gap-x-4">
                 <div className="form-parent col-span-1">
-                  <select className="" name="" id="" value="hello">
+
+                  {/* To fix chevron another time */}
+                  <select className={idType != "" ? "ring-1 ring-primary" : ""} name="id-type" value={idType} onChange={(e) => setIdType(e.target.value)}>
+                    <option value=""></option>
                     <option value="NRIC">NRIC</option>
                   </select>
-                  <label htmlFor="id-type">Identification Type</label>
+                  <label className={idType != "" ? "focused" : ""} htmlFor="id-type">Identification Type</label>
                 </div>
                 <div className="form-parent col-span-2">
-                  <input type="text" name="user-id"></input>
-                  <label htmlFor="identification-no">Identification No.</label>
+                  <input type="text" name="user-id" onChange={handleInputChange_2}></input>
+                  <label className={isFocus_2 ? "focused" : ""} htmlFor="identification-no">Identification No.</label>
                 </div>
               </div>
 
