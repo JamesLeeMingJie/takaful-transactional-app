@@ -29,9 +29,13 @@ import 'swiper/css/navigation';
 export default function CertificateDetails() {
   const [tab, setTab] = useState("certificate");
 
-  const swiperPrevButton = useRef(null);
-  const swiperPagination = useRef(null);
-  const swiperNextButton = useRef(null);
+  /*
+  useRef incompatibility with Swiper because variables remain null during first render; to research further
+  */
+
+  // const swiperPrevButton = useRef(null);
+  // const swiperPagination = useRef(null);
+  // const swiperNextButton = useRef(null);
 
   return (
     <main className="pb-24">
@@ -598,7 +602,7 @@ export default function CertificateDetails() {
                 <div className="pt-6 mb-6 border-b-[1.5px] border-[#EEEEEE]">
                   <Collapsible title={"List of Rider Coverage"}>
                     <div>
-                      <div className="grid grid-cols-[1fr_2fr_7fr_2fr] gap-x-4 pb-2 pl-2 ">
+                      <div className="grid grid-cols-[1fr_2fr_7fr_2fr] gap-x-4 pb-2 pl-4">
                         <div className="text-font-secondary text-[14px]">
                           No.
                         </div>
@@ -615,8 +619,8 @@ export default function CertificateDetails() {
 
                       <div className="border-b-[2px] border-[#BBBBBB] col-span-2"></div>
 
-                      <Swiper pagination={{ type: 'fraction', el: swiperPagination.current }} navigation={{
-                        prevEl: swiperPrevButton.current, nextEl: swiperNextButton.current
+                      <Swiper pagination={{ type: 'fraction', el: '.swiper-pagination' }} navigation={{
+                        prevEl: '.swiper-button-prev', nextEl: '.swiper-button-next'
                       }} modules={[Pagination, Navigation]} className="certificateSwiper" onSwiper={function (swiper) {
                         console.log(swiper)
                       }}>
@@ -625,7 +629,7 @@ export default function CertificateDetails() {
                             className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
 
                             {/* First row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
                               <div>
                                 1
                               </div>
@@ -641,7 +645,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Second row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
                               <div>
                                 2
                               </div>
@@ -657,7 +661,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Third row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
                               <div>
                                 3
                               </div>
@@ -673,7 +677,7 @@ export default function CertificateDetails() {
                             </div>
 
                             {/* Fourth row */}
-                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-2">
+                            <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
                               <div>
                                 4
                               </div>
@@ -760,10 +764,9 @@ export default function CertificateDetails() {
 
                         </SwiperSlide>
                         <div className="flex border-[#E7E7E7] border-[1px] rounded-[4px] w-fit ml-auto mb-6">
-                          <div ref={swiperPrevButton} className="swiper-button-prev w-fit p-4"></div>
-                          <div ref={swiperPagination} className="swiper-pagination w-fit px-8 py-4 border-x-[1px] border-[#E7E7E7]">
-                          </div>
-                          <div ref={swiperNextButton} className="swiper-button-next w-fit p-4"></div>
+                          <div className="swiper-button-prev w-fit p-4"></div>
+                          <div className="swiper-pagination w-fit px-8 py-4 border-x-[1px] border-[#E7E7E7]"></div>
+                          <div className="swiper-button-next w-fit p-4"></div>
                         </div>
                       </Swiper>
                     </div>
@@ -835,22 +838,26 @@ export default function CertificateDetails() {
             {tab == "payment" &&
               <div>
                 {/* ===== First collapsible ===== */}
-                <div className="border-b-[1.5px] border-[#EEEEEE]">
+                {/* className="border-b-[1.5px] border-[#EEEEEE]" */}
+                <div>
                   {/* Collapsible button */}
                   <div className="flex justify-between pb-6">
                     <p className="text-font-primary text-[18px] font-bold">Payment & Receipts</p>
                   </div>
 
+
+
                   {/* Collapsible content */}
-                  <div className="grid grid-cols-2 gap-y-8">
+                  <div className="grid grid-cols-2 gap-y-8 pb-8">
                     <div className="form-parent overflow-visible">
                       <Image className="absolute right-[3%] top-[25%]" src={calendarIcon} alt="" />
                       <input id="daterangepicker" className="pl-2 text-[18px] text-font-secondary" type="text" name="daterange"
                         value="--Choose Date--"></input>
                       <label for="daterangepicker">Filter by Date</label>
                     </div>
+                  </div>
 
-                    <p className="text-base text-font-primary col-span-2">
+                  {/* <p className="text-base text-font-primary col-span-2">
                       Status: <span className="text-inactive">Pending</span>
                     </p>
 
@@ -862,9 +869,93 @@ export default function CertificateDetails() {
                       <button className="text-[18px] text-primary border-[1px] border-primary rounded-[30px] py-3 px-6 w-fit">
                         Claim Now
                       </button>
+                    </div> */}
+
+                  <div className="grid grid-cols-4 gap-x-4 pb-2 pl-4">
+                    <div className="text-font-secondary text-[14px]">
+                      No.
+                    </div>
+                    <div className="text-font-secondary text-[14px]">
+                      Receipts
+                    </div>
+                    <div className="text-font-secondary text-[14px]">
+                      Amount (RM)
+                    </div>
+                    <div className="text-font-secondary text-[14px]">
+                      Payment Type
+                    </div>
+                  </div>
+
+                  <div className="border-b-[2px] border-[#BBBBBB] col-span-2"></div>
+
+                  <div
+                    className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+
+                    {/* First row */}
+                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                      <div>
+                        1
+                      </div>
+                      <div>
+                        C200
+                      </div>
+                      <div>
+                        1149.56
+                      </div>
+                      <div>
+                        Online Banking
+                      </div>
                     </div>
 
+                    {/* Second row */}
+                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                      <div>
+                        2
+                      </div>
+                      <div>
+                        C057
+                      </div>
+                      <div>
+                        873.98
+                      </div>
+                      <div>
+                        Online Banking
+                      </div>
+                    </div>
+
+                    {/* Third row */}
+                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                      <div>
+                        3
+                      </div>
+                      <div>
+                        C108
+                      </div>
+                      <div>
+                        770.31
+                      </div>
+                      <div>
+                        Online Banking
+                      </div>
+                    </div>
+
+                    {/* Fourth row */}
+                    <div className="grid grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 pl-4">
+                      <div>
+                        4
+                      </div>
+                      <div>
+                        C025
+                      </div>
+                      <div>
+                        1024.66
+                      </div>
+                      <div>
+                        e-Wallet
+                      </div>
+                    </div>
                   </div>
+
                 </div>
                 {/* ===== End First collapsible ===== */}
               </div>
@@ -886,7 +977,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -895,7 +986,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -904,7 +995,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -913,7 +1004,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />

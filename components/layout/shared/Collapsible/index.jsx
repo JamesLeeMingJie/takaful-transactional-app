@@ -36,7 +36,7 @@ export default function Collapsible({ title, children }) {
   return (
     <>
       {/* Collapsible button */}
-      <div className="flex justify-between items-center pb-6" onClick={handleCollapsible}>
+      <div className="flex justify-between items-center pb-6 cursor-pointer" onClick={handleCollapsible}>
         <p className="text-font-primary text-[18px] font-bold">{title}</p>
         {isOpen ? <Image src={minusIcon} alt="" /> : <Image src={plusIcon} alt="" />}
       </div>
