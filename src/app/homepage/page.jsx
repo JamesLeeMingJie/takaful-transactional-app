@@ -8,12 +8,19 @@ import claimsIcon from '@/icons/claims-icon.svg';
 import paymentIcon from '@/icons/payment-icon.svg';
 import documentIcon from '@/icons/document-icon.svg';
 import chevronRightShadowIcon from '@/icons/chevron-right-shadow-icon.svg';
+import circleCar from '@/icons/circle-car-icon.png';
+import circleFamily from '@/icons/circle-family-icon.png';
+import circlePlane from '@/icons/circle-plane-icon.png';
 
 export default function Homepage() {
   const [tab, setTab] = useState('all');
 
+  const cardShadow = {
+    boxShadow: "0px 4px 8px 2px #0000000D"
+  };
+
   return (
-    <main className="pb-24">
+    <main>
       <section>
         <p className="mx-auto w-10/12 text-[25px] font-bold pb-4">
           Certificate
@@ -26,10 +33,29 @@ export default function Homepage() {
           <button
             className={`${tab == "inactive" ? "border-[#E03DFC] text-[#E03DFC] bg-[#F1D0F6]" : "border-[#000000] text-[#000000] bg-[#FFFFFF]"} border-[1px] rounded-[40px] py-2 px-6`} onClick={() => setTab("inactive")}>Inactive</button>
         </div>
-        <div className="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 pb-12">
+        <div className="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8 pb-12 relative">
+          <div className="fixed right-[8.5%] top-[45%] z-10">
+            <Image className="rounded-full mb-2" style={{
+              boxShadow: "0px 2px 8px 2px #0000000D"
+            }} src={circleCar} width={45} alt="" />
+            <Image className="rounded-full mb-2" style={{
+              boxShadow: "0px 2px 8px 2px #0000000D"
+            }} src={circleFamily} width={45} alt="" />
+            <Image className="rounded-full mb-2" style={{
+              boxShadow: "0px 2px 8px 2px #0000000D"
+            }} src={circlePlane} width={45} alt="" />
+          </div>
+          {/* 
+          {tab != 'inactive' ? (
+            <div>
+              Hello
+            </div>
+          ) : (
+            <div>Goodbye</div>
+          )} */}
 
           {/* First card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -77,8 +103,10 @@ export default function Homepage() {
             </div>
           </div>
 
+
+
           {/* Second card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -131,7 +159,7 @@ export default function Homepage() {
           </div>
 
           {/* Third card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -180,7 +208,7 @@ export default function Homepage() {
           </div>
 
           {/* Fourth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -233,7 +261,7 @@ export default function Homepage() {
           </div>
 
           {/* Fifth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -282,7 +310,7 @@ export default function Homepage() {
           </div>
 
           {/* Sixth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -335,7 +363,7 @@ export default function Homepage() {
           </div>
 
           {/* Seventh card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -384,7 +412,7 @@ export default function Homepage() {
           </div>
 
           {/* Eighth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -437,7 +465,7 @@ export default function Homepage() {
           </div>
 
           {/* Ninth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -486,7 +514,7 @@ export default function Homepage() {
           </div>
 
           {/* Tenth card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -539,7 +567,7 @@ export default function Homepage() {
           </div>
 
           {/* Eleventh card */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -588,7 +616,7 @@ export default function Homepage() {
           </div>
 
           {/* Twelfth */}
-          <div className="px-4 py-8 shadow-lg rounded-[16px] grid">
+          <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>
             <div className="flex items-center justify-between pb-4 border-b-[1px] border-[#EEEEEE] gap-x-8">
               <div>
                 <p className="text-[18px] text-font-primary font-semibold">
@@ -646,28 +674,28 @@ export default function Homepage() {
       </section>
 
       <section>
-        <p className="mx-auto w-10/12 text-[25px] font-bold pb-4">
+        <p className="mx-auto w-10/12 text-[25px] font-bold pb-4 text-center sm:text-left">
           Quick Links
         </p>
-        <div className="mx-auto w-10/12 flex flex-wrap gap-6">
+        <div className="mx-auto w-10/12 flex flex-wrap gap-6 justify-center sm:justify-start">
           <div
-            className="w-[200px] h-[200px] rounded-[16px] shadow-lg grid grid-rows-[1fr_50px] py-4 items-center justify-center">
+            className="w-[200px] h-[200px] rounded-[16px] grid grid-rows-[1fr_50px] py-4 items-center justify-center" style={cardShadow}>
             <Image src={claimsIcon} alt="" />
             <p className="text-[22px] text-center">Claims</p>
           </div>
           <div
-            className="w-[200px] h-[200px] rounded-[16px] shadow-lg grid grid-rows-[1fr_50px] py-4 items-center justify-center">
+            className="w-[200px] h-[200px] rounded-[16px] grid grid-rows-[1fr_50px] py-4 items-center justify-center" style={cardShadow}>
             <Image src={paymentIcon} alt="" />
             <p className="text-[22px] text-center">Payment</p>
           </div>
           <div
-            className="w-[200px] h-[200px] rounded-[16px] shadow-lg grid grid-rows-[1fr_50px] py-4 items-center justify-center">
+            className="w-[200px] h-[200px] rounded-[16px] grid grid-rows-[1fr_50px] py-4 items-center justify-center" style={cardShadow}>
             <Image src={documentIcon} alt="" />
             <p className="text-[22px] text-center">Document</p>
           </div>
         </div>
       </section>
 
-    </main>
+    </main >
   )
 }

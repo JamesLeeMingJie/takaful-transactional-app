@@ -16,6 +16,7 @@ module.exports = {
       inactive: "#F39200",
       "background-primary": "#F2F2F2",
       "background-secondary": "#F7F7F7",
+      "secondary-gray": "#D8D8D8",
     },
     screens: {
       xs: "320px",
