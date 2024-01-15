@@ -1,4 +1,4 @@
-"use client";
+"use client"
 
 // Components
 import Image from "next/image";
@@ -78,26 +78,31 @@ export default function Home() {
           </div>
 
           <div>
-            <p className="text-font-primary text-[32px] font-bold pb-8">Welcome to Customer Portal</p>
-            <p className="text-font-primary text-[24px] font-semibold pb-6">Login</p>
+            <p className="text-font-primary text-[32px] font-bold pb-8">Forgot your password</p>
+            <p className="text-font-primary text-[24px] font-semibold pb-6">Reset your password/username</p>
             <form action="">
               <div className="relative">
-                <input id="username" placeholder="920202-06-5105" className="mb-6 px-4 placeholder-black" type="text" name="user-id"></input>
+                <input placeholder="Email" className="mb-6 px-4 placeholder-black" type="text" name="email"></input>
                 {/* <label for="username" className="">Hello world</label> */}
               </div>
-              <input placeholder="***********" className="mb-10 px-4 placeholder-black" type="password" name="password"></input>
+
+              <div className="grid relative grid-cols-3 gap-x-4">
+                <input placeholder="NRIC" className="mb-6 px-4 placeholder-black col-span-1" type="text" name="id-type"></input>
+                <input placeholder="920202-06-5105" className="mb-6 px-4 placeholder-black col-span-2" type="text" name="user-id"></input>
+              </div>
+
               <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
-                type="submit">Login</button>
+                type="submit">Send To Email</button>
             </form>
-            <p className="pb-4 sm:pb-2 flex flex-wrap gap-x-2 gap-y-[5px]">
+            <p className="pb-2 flex gap-x-2">
               <Image className="inline-block" src={blueArrow} alt="" /><span
-                className="text-font-primary">Forgot username or password?</span>
-              <span className="text-[#237BFF]"><Link href="/register">Click here</Link></span>
+                className="text-font-primary">Have an account?</span>
+              <span className="text-[#237BFF]"><Link href="/">Login here</Link></span>
             </p>
             <p className="flex gap-x-2">
               <Image className="inline-block" src={blueArrow} alt="" /><span
-                className="text-font-primary">New to Kaotim?</span>
-              <span className="text-[#237BFF]"><Link href="/register">Register Now</Link></span>
+                className="text-font-primary">First time here?</span>
+              <span className="text-[#237BFF]"><Link href="/register">Register here</Link></span>
             </p>
           </div>
 

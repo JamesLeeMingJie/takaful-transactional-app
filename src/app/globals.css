@@ -9,4 +9,12 @@
   html {
     font-family: 'Poppins', sans-serif;
   }
+
+  body {
+    min-height: 100vh;
+
+    /* Experimenting - https://www.30secondsofcode.org/css/s/footer-at-the-bottom/#:~:text=This%20is%20done%20by%20setting,it%20and%20its%20previous%20sibling. */
+    display: grid;
+    grid-template-rows: 1fr auto;
+  }
 }

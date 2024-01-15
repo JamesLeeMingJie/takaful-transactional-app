@@ -47,7 +47,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <title>Takaful Transactional</title>
       <link rel="icon" href="/icon.svg" sizes="any" />
-      <body className={pathname == "/" ? "min-h-screen grid grid-cols-1" : ""}>
+      <body className={pathname == "/" ? "" : ""}>
         <Navigation />
         {children}
         <Footer />
