@@ -13,9 +13,9 @@ import userIcon from '@/icons/user-icon.svg';
 export default function Navigation() {
   const pathname = usePathname();
   return (
-    <header className={`mx-auto w-10/12 py-8 ${pathname == "/" ? "" : "flex justify-between"}`}>
+    <header className={`mx-auto w-10/12 pt-8 pb-12 ${pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" : "flex justify-between"}`}>
       <Image src={navLogo} alt="" />
-      {pathname == "/" ? "" :
+      {pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" :
         <div className="flex pr-8 items-center">
           <Image className="mr-2" src={gridIcon} alt="" />
           <div className="relative">

@@ -17,19 +17,20 @@
   object-fit: cover;
 }
 
-/***** Login Swiper *****/
-.swiper.loginSwiper {
+/***** Landing swiper *****/
+.swiper.landingSwiper {
   margin-bottom: 4rem;
   padding-bottom: 1rem;
 }
 
-.loginSwiper .swiper-pagination {
+.landingSwiper .swiper-pagination {
   bottom: 0 !important;
 }
 
-/***** End login swiper *****/
+/***** End landing swiper *****/
 
-/***** Certificate Swiper *****/
+
+/***** Certificate swiper *****/
 .certificateSwiper .swiper-slide {
   display: unset;
   width: 100% !important;
@@ -44,10 +45,41 @@
 }
 
 .certificateSwiper .swiper-button-next:after, .certificateSwiper .swiper-button-prev:after {
-  font-size: 10px;
-
+  font-size: 15px;
+  color: #767676;
 }
 
 .certificateSwiper .swiper-pagination {
   position: unset;
 }
+
+/***** End certificate swiper *****/
+
+/***** Claims swiper  *****/
+.claimsSwiper .swiper-slide {
+  display: unset;
+  width: 100% !important;
+}
+
+.claimsSwiper .swiper-button-prev, .claimsSwiper .swiper-button-next {
+  color: #767676;
+  position: unset;
+  height: unset;
+  width: unset;
+  margin: unset;
+}
+
+.claimsSwiper .swiper-button-next:after, .claimsSwiper .swiper-button-prev:after {
+  font-size: 15px;
+  color: #767676;
+}
+
+.claimsSwiper .swiper-pagination {
+  position: unset;
+}
+
+.swiper-chevron {
+  width: 10px !important;
+}
+
+/***** End claims swiper *****/

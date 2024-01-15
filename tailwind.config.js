@@ -15,9 +15,10 @@ module.exports = {
       active: "#20C6A8",
       inactive: "#F39200",
       "background-primary": "#F2F2F2",
-      "background-secondary": "F7F7F7",
+      "background-secondary": "#F7F7F7",
     },
     screens: {
+      xs: "320px",
       sm: "480px",
       md: "768px",
       lg: "1024px",
