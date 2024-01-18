@@ -15,7 +15,18 @@ import Link from "next/link";
 export default function Navigation() {
   const pathname = usePathname();
 
-  const [isMenuVisible, setIsMenuVisible] = useState(false);
+  // Initiate state to undefined because false will trigger fadeOut animation upon page load
+  const [isMenuVisible, setIsMenuVisible] = useState(undefined);
+
+  console.log(isMenuVisible);
+
+  function onMouseEnterHandler() {
+    setIsMenuVisible(true);
+  }
+
+  function onMouseLeaveHandler() {
+    setIsMenuVisible(false);
+  }
 
   return (
     <header className={`mx-auto w-10/12 pt-8 pb-12 ${pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" : "flex justify-between"}`}>
@@ -23,12 +34,12 @@ export default function Navigation() {
         <Image src={navLogo} alt="" />
       </Link>
       {pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" :
-        <div className="flex sm:pr-8 items-end">
-          <div className="relative mr-2 z-10" onMouseEnter={() => setIsMenuVisible(true)} onMouseLeave={() => setIsMenuVisible(false)}>
-            {isMenuVisible ? <Image src={gridPurpleIcon} alt="" /> : <Image src={gridIcon} alt="" />}
-            {isMenuVisible &&
-              <div className="absolute right-0">
-                <div className="text-font-secondary text-[18px] font-normal px-4 py-8 rounded-[16px] w-[260px] bg-white" style={{ boxShadow: "0px 4px 8px 2px #0000000D" }}>
+        (
+          <div className="flex sm:pr-8 items-end">
+            <div className="relative mr-2 z-20" onMouseEnter={onMouseEnterHandler} onMouseLeave={onMouseLeaveHandler}>
+              {isMenuVisible ? <Image src={gridPurpleIcon} alt="" /> : <Image src={gridIcon} alt="" />}
+              <div className={`absolute right-0 ${isMenuVisible ? "pointer-events-auto" : "pointer-events-none"}`}>
+                <div className={`${isMenuVisible ? "fade-in-nav opacity-100" : isMenuVisible === undefined ? "" : "fade-out-nav opacity-0"} opacity-0 text-font-secondary text-[18px] font-normal px-4 py-8 rounded-[16px] w-[260px] bg-white`} style={{ boxShadow: "0px 4px 8px 2px #0000000D" }}>
                   <p className="pb-3">
                     <Link href={"/homepage"}>
                       Home
@@ -51,14 +62,14 @@ export default function Navigation() {
                   </p>
                 </div>
               </div>
-            }
+            </div>
+            <div className="relative">
+              <Image className="mr-2" src={bellIcon} alt="" />
+              <Image className="absolute top-0 right-[15%]" src={notificationIcon} width={18} height={18} alt="" />
+            </div>
+            <Image src={userIcon} alt="" />
           </div>
-          <div className="relative">
-            <Image className="mr-2" src={bellIcon} alt="" />
-            <Image className="absolute top-0 right-[10%]" src={notificationIcon} alt="" />
-          </div>
-          <Image src={userIcon} alt="" />
-        </div >
+        )
       }
     </header >
   )

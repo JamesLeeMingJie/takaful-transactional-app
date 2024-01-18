@@ -13,13 +13,14 @@ import "./globals.css";
 /***** 
  I couldn't import styling using functions below because the HTML file will load first before styling comes in (Most likely due to the sequence of the call stack) 
 *****/
-import "./styles/collapsible.css";
-import "./styles/custom.css";
-import "./styles/daterange.css";
-import "./styles/form.css";
-import "./styles/normalize.css";
-import "./styles/swiper.css";
-import "./styles/tabs.css";
+import "@/styles/animation.css";
+import "@/styles/collapsible.css";
+import "@/styles/custom.css";
+import "@/styles/daterange.css";
+import "@/styles/form.css";
+import "@/styles/normalize.css";
+import "@/styles/swiper.css";
+import "@/styles/tabs.css";
 
 // Import styling
 // const stylingFiles = [
@@ -47,7 +48,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <title>Takaful Transactional</title>
       <link rel="icon" href="/icon.svg" sizes="any" />
-      <body className={pathname == "/" ? "" : ""}>
+      <body className={`${pathname == "/" ? "" : ""} overflow-x-hidden`}>
         <Navigation />
         {children}
         <Footer />

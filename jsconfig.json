@@ -2,7 +2,8 @@
   "compilerOptions": {
     "paths": {
       "@/icons/*": ["./public/icons/*"],
-      "@/images/*": ["./public/images/*"]
+      "@/images/*": ["./public/images/*"],
+      "@/styles/*": ["./src/app/styles/*"]
     }
   }
 }

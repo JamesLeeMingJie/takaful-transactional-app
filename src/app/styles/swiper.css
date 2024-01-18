@@ -45,7 +45,7 @@
 }
 
 .certificateSwiper .swiper-button-next:after, .certificateSwiper .swiper-button-prev:after {
-  font-size: 15px;
+  font-size: 10px;
   color: #767676;
 }
 
@@ -70,7 +70,7 @@
 }
 
 .claimsSwiper .swiper-button-next:after, .claimsSwiper .swiper-button-prev:after {
-  font-size: 15px;
+  font-size: 10px;
   color: #767676;
 }
 
@@ -79,7 +79,36 @@
 }
 
 .swiper-chevron {
-  width: 10px !important;
+  width: 8px !important;
 }
 
 /***** End claims swiper *****/
+
+/***** Payment swiper *****/
+.paymentSwiper .swiper-slide {
+  display: unset;
+  width: 100% !important;
+}
+
+.paymentSwiper .swiper-button-prev, .paymentSwiper .swiper-button-next {
+  color: #767676;
+  position: unset;
+  height: unset;
+  width: unset;
+  margin: unset;
+}
+
+.paymentSwiper .swiper-button-next:after, .paymentSwiper .swiper-button-prev:after {
+  font-size: 10px;
+  color: #767676;
+}
+
+.paymentSwiper .swiper-pagination {
+  position: unset;
+}
+
+.swiper-chevron {
+  width: 8px !important;
+}
+
+/***** End payment swiper *****/

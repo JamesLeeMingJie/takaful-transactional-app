@@ -12,7 +12,6 @@ import arrowBackIcon from '@/icons/arrow-back-icon.svg';
 import generalTakafulIcon from '@/icons/general-takaful-icon.svg';
 import familyTakafulIcon from '@/icons/family-takaful-icon.svg';
 import minusIcon from '@/icons/minus-icon.svg';
-import plusIcon from '@/icons/plus-icon.svg';
 import calendarIcon from '@/icons/calendar-icon.svg';
 import downloadDocumentIcon from '@/icons/download-document-icon.svg';
 import downloadButtonIcon from '@/icons/download-button-icon.svg';
@@ -263,107 +262,6 @@ export default function CertificateDetails() {
 
                     </div>
                   </Collapsible>
-                  {/* Collapsible button */}
-                  {/* <div className="flex justify-between pb-6" onClick={handleCollapsible}>
-                    <p className="text-font-primary text-[18px] font-bold">Certificate Details</p>
-                    {isOpen ? <Image src={plusIcon} alt="" /> : <Image src={minusIcon} alt="" />}
-                  </div> */}
-
-                  {/* Collapsible content */}
-                  {/* {isOpen &&
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 pb-6">
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Certificate No.
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          TMMC0000829/V0499577
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Product Name
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          Kaotim Motorcycle
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Vehicle No.
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          JQV6531
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Vehicle Model
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          SYM Jet Power
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          NCD(%)
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          0.00
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Sum Covered (RM)
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          1,400
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Effective Date
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          11/08/2023
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Expiry Date
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          10/08/2024
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Details of Branch
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          MYCC Menara Takaful Malaysia
-                        </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-font-secondary">
-                          Excess (RM)
-                        </p>
-                        <p className="text-font-primary font-semibold">
-                          0
-                        </p>
-                      </div>
-
-                    </div>
-                  } */}
                 </div>
                 {/* ===== End First collapsible ===== */}
 
@@ -626,9 +524,7 @@ export default function CertificateDetails() {
 
                       <Swiper pagination={{ type: 'fraction', el: '.swiper-pagination' }} navigation={{
                         prevEl: '.swiper-button-prev', nextEl: '.swiper-button-next'
-                      }} modules={[Pagination, Navigation]} className="certificateSwiper" onSwiper={function (swiper) {
-                        console.log(swiper)
-                      }}>
+                      }} modules={[Pagination, Navigation]} className="certificateSwiper">
                         <SwiperSlide>
                           <div
                             className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base sm:text-[18px] font-semibold items-center pb-8">
@@ -769,9 +665,9 @@ export default function CertificateDetails() {
 
                         </SwiperSlide>
                         <div className="flex border-[#E7E7E7] border-[1px] rounded-[4px] w-fit ml-auto mb-6">
-                          <div className="swiper-button-prev w-fit p-4"></div>
-                          <div className="swiper-pagination w-fit px-8 py-4 border-x-[1px] border-[#E7E7E7]"></div>
-                          <div className="swiper-button-next w-fit p-4"></div>
+                          <div className="swiper-button-prev w-fit p-3"></div>
+                          <div className="swiper-pagination w-fit px-6 flex items-center border-x-[1px] border-[#E7E7E7]"></div>
+                          <div className="swiper-button-next w-fit p-3"></div>
                         </div>
                       </Swiper>
                     </div>
@@ -813,7 +709,7 @@ export default function CertificateDetails() {
                   <div className="grid grid-cols-2 gap-y-8 pb-8">
                     <div className="form-parent-filter overflow-visible">
                       <DateRangePicker showOneCalendar className="w-[400px] relative z-[1]" size="lg" placeholder="--Choose Date--" />
-                      <label for="daterangepicker">Filter by Date</label>
+                      <label htmlFor="daterangepicker">Filter by Date</label>
                     </div>
 
                     <p className="text-base text-font-primary col-span-2">
@@ -852,7 +748,7 @@ export default function CertificateDetails() {
                   <div className="grid grid-cols-2 gap-y-8 pb-8">
                     <div className="form-parent-filter overflow-visible">
                       <DateRangePicker showOneCalendar className="w-[400px] relative z-[1]" size="lg" placeholder="--Choose Date--" />
-                      <label for="daterangepicker">Filter by Date</label>
+                      <label htmlFor="daterangepicker">Filter by Date</label>
                     </div>
                   </div>
 

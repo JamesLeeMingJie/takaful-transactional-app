@@ -22,7 +22,7 @@ export default function Homepage() {
   return (
     <main>
       <section>
-        <p className="mx-auto w-10/12 text-[25px] font-bold pb-4">
+        <p className="mx-auto w-10/12 text-[25px] font-bold pb-4 text-black">
           Certificate
         </p>
         <div className="mx-auto w-10/12 pb-4 flex flex-wrap gap-2">
@@ -102,8 +102,6 @@ export default function Homepage() {
               </button>
             </div>
           </div>
-
-
 
           {/* Second card */}
           <div className="px-4 py-8 rounded-[16px] grid" style={cardShadow}>

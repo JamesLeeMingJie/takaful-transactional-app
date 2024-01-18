@@ -1,0 +1,27 @@
+.fade-in-nav {
+  animation: fadeInNav 1s;
+}
+
+.fade-out-nav {
+  animation: fadeOutNav 1s;
+}
+
+@keyframes fadeInNav {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 100;
+  }
+}
+
+@keyframes fadeOutNav {
+  from {
+    opacity: 100;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
