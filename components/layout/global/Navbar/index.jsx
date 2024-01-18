@@ -18,8 +18,6 @@ export default function Navigation() {
   // Initiate state to undefined because false will trigger fadeOut animation upon page load
   const [isMenuVisible, setIsMenuVisible] = useState(undefined);
 
-  console.log(isMenuVisible);
-
   function onMouseEnterHandler() {
     setIsMenuVisible(true);
   }

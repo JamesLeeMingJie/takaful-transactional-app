@@ -47,7 +47,7 @@ export default function Homepage() {
             }} src={circlePlane} width={45} alt="" />
           </div>
 
-          <div className="fixed right-[8.5%] top-[80%] z-10">
+          <div className="fixed right-[8.5%] bottom-[6%] z-10">
             <Image src={messageWithColor} width={60} height={60} alt="" />
           </div>
           {/* 
