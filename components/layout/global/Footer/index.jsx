@@ -5,8 +5,6 @@ import Image from "next/image";
 
 // Assets
 import pidmLogo from '@/icons/pidm-logo.svg';
-import messageWithColor from '@/icons/message-with-color-icon.svg';
-
 
 export default function Footer() {
   const pathname = usePathname();
@@ -14,7 +12,6 @@ export default function Footer() {
   return (
     <footer className="bg-background-primary z-[1]">
       <div className="text-center text-font-secondary py-6 flex flex-col justify-center w-10/12 mx-auto relative">
-        {pathname == "/homepage" ? <Image className="absolute top-0 right-0 translate-y-[-60%] sm:translate-y-[-45%]" src={messageWithColor} alt="" /> : ""}
         <p className="pb-4 sm:pb-2">Security | Terms & Conditions | Privacy Notice | Customer Service Charter</p>
         <p className="pb-4 sm:pb-1">Managed by © <span className="text-[#2194FF] underline">Syarikat Takaful Malaysia Keluarga Berhad</span> 198401019089 (131646-K).</p>
         <p className="pb-4 sm:pb-1">Licensed under the Islamic Financial Services Act 2013 and regulated by Bank Negara Malaysia.</p>

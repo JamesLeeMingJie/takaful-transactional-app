@@ -21,7 +21,9 @@ export default function ClaimsDetail({ params }) {
       <section>
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p className="text-font-primary">Back</p>
+          <Link href="/claims">
+            <p className="text-font-primary">Back</p>
+          </Link>
         </div>
         <p className="mx-auto w-10/12 text-[25px] font-bold pb-8 text-black">
           Claims
@@ -38,7 +40,7 @@ export default function ClaimsDetail({ params }) {
               className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF]" onClick={() => setTab("failed")}>Failed</button>
           </div>
           <button
-            className="text-[18px] text-primary border-[1px] border-primary rounded-[30px] py-2 px-3 w-fit flex items-center">
+            className="text-base text-primary border-[1px] border-primary rounded-[30px] py-2 px-3 w-fit flex items-center">
             <Image className="inline pr-4" src={plusIcon} width={35} alt="" />
             <p>New Submissions</p>
           </button>

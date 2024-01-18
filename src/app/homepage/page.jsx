@@ -11,6 +11,7 @@ import chevronRightShadowIcon from '@/icons/chevron-right-shadow-icon.svg';
 import circleCar from '@/icons/circle-car-icon.png';
 import circleFamily from '@/icons/circle-family-icon.png';
 import circlePlane from '@/icons/circle-plane-icon.png';
+import messageWithColor from '@/icons/message-with-color-icon.png';
 
 export default function Homepage() {
   const [tab, setTab] = useState('all');
@@ -44,6 +45,10 @@ export default function Homepage() {
             <Image className="rounded-full mb-2" style={{
               boxShadow: "0px 2px 8px 2px #0000000D"
             }} src={circlePlane} width={45} alt="" />
+          </div>
+
+          <div className="fixed right-[8.5%] top-[80%] z-10">
+            <Image src={messageWithColor} width={60} height={60} alt="" />
           </div>
           {/* 
           {tab != 'inactive' ? (

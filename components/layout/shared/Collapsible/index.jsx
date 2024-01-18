@@ -7,7 +7,7 @@ import minusIcon from '@/icons/minus-icon.svg';
 import plusIcon from '@/icons/plus-icon.svg';
 
 export default function Collapsible({ title, children }) {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(true);
   const pathname = usePathname();
 
   // const [height, setHeight] = useState(0);
@@ -45,7 +45,7 @@ export default function Collapsible({ title, children }) {
       </div>
 
       {/* Collapsible content */}
-      {isOpen && <div className="collapsible-animation" >{children}</div>
+      {isOpen && <div className="collapsible-animation">{children}</div>
       }
     </>
   )

@@ -45,7 +45,7 @@ export default function Claims() {
               className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF]" onClick={() => setTab("failed")}>Failed</button>
           </div>
           <button
-            className="text-[18px] text-primary border-[1px] border-primary rounded-[30px] py-2 px-3 w-fit flex items-center">
+            className="text-base text-primary border-[1px] border-primary rounded-[30px] py-2 px-3 w-fit flex items-center">
             <Image className="inline pr-4" src={plusIcon} width={35} alt="" />
             <p>New Submissions</p>
           </button>
