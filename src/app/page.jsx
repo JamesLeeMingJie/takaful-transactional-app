@@ -38,7 +38,7 @@ export default function Home() {
 
   return (
     <main>
-      <Image className="absolute top-[-15%] right-[-20%] z-1" src={kaotimBackgroundImage} alt="" />
+      <Image className="hidden sm:block absolute top-[-15%] right-[-20%] z-1" src={kaotimBackgroundImage} alt="" />
       <section className="z-10 relative">
         <div className="mx-auto w-10/12 grid grid-cols-1 lg:grid-cols-2 gap-x-28">
           <div className="h-fit pb-12 lg:pb-0">

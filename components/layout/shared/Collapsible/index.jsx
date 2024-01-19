@@ -10,31 +10,11 @@ export default function Collapsible({ title, children }) {
   const [isOpen, setIsOpen] = useState(true);
   const pathname = usePathname();
 
-  // const [height, setHeight] = useState(0);
+  const collapsibleContent = useRef(undefined);
 
   const handleCollapsible = () => {
     setIsOpen((prev) => !prev);
   };
-
-  // const collapsibleContent = useRef(null);
-
-  // useEffect(() => {
-  //   if (isOpen) setHeight(collapsibleContent.current?.getBoundingClientRect().height);
-  //   else setHeight(0);
-  // }, [isOpen]);
-
-  // useEffect(() => {
-  //   if (!height || !isOpen || !collapsibleContent.current) return undefined;
-
-  //   const resizeObserver = new ResizeObserver((el) => {
-  //     setHeight(el[0].contentRect.height);
-  //   });
-
-  //   resizeObserver.observe(collapsibleContent.current);
-  //   return () => {
-  //     resizeObserver.disconnect();
-  //   };
-  // }, [height, isOpen]);
 
   return (
     <>
@@ -44,9 +24,12 @@ export default function Collapsible({ title, children }) {
         {isOpen ? <Image src={minusIcon} alt="" /> : <Image src={plusIcon} alt="" />}
       </div>
 
+      {/* This condition doesn't work when page is refreshed. */}
+
       {/* Collapsible content */}
-      {isOpen && <div className="collapsible-animation">{children}</div>
-      }
+      <div ref={collapsibleContent} className="collapsible-animation" style={isOpen ? collapsibleContent === undefined ? {} : { height: collapsibleContent?.current?.scrollHeight + "px" } : { height: "0px" }}>
+        {children}
+      </div >
     </>
   )
 }
