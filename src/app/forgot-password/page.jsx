@@ -28,21 +28,9 @@ import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
 export default function ForgotPassword() {
-  const [idType, setIdType] = useState('');
-  const [isFocus_1, setIsFocus_1] = useState(false);
-  const [isFocus_2, setIsFocus_2] = useState(false);
-
-  function handleInputChange_1(e) {
-    e.target.value != "" ? setIsFocus_1(true) : setIsFocus_1(false)
-  }
-
-  function handleInputChange_2(e) {
-    e.target.value != "" ? setIsFocus_2(true) : setIsFocus_2(false)
-  }
-
   return (
     <main>
-      <Image className="hidden sm:block absolute top-[-15%] right-[-20%] z-1" src={kaotimBackgroundImage} alt="" />
+      <Image className="hidden sm:block absolute top-[-20%] right-[-20%] z-1 w-[55%]" src={kaotimBackgroundImage} alt="" />
       <section className="z-10 relative">
         <div className="mx-auto w-10/12 grid grid-cols-1 lg:grid-cols-2 gap-x-28">
           <div className="h-fit pb-12 lg:pb-0">
@@ -129,7 +117,6 @@ export default function ForgotPassword() {
 
         </div>
       </section>
-
 
     </main>
   )

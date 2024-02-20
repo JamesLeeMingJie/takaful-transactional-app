@@ -47,7 +47,7 @@ export default function Documents() {
           </div>
         </div>
 
-        <div className="grid lg:grid-cols-3 w-10/12 mx-auto pb-8">
+        <div className="grid lg:grid-cols-3 w-10/12 mx-auto h-[50px] mb-8">
           <Select id={"product"} label={"Select Product"} name={"product"} spanNum={1}>
             <option value=""></option>
             <option value="Takaful Motor">Takaful Motor</option>
