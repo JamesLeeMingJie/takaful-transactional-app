@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useState } from "react";
 
 // Custom components
-import Collapsible from "../../../../components/layout/shared/Collapsible";
+import Collapsible from "@/components/layout/shared/Collapsible";
 
 // Assets
 import plusIcon from '@/icons/plus-icon.svg';

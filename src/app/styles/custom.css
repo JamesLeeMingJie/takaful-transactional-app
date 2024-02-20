@@ -33,7 +33,7 @@ input {
   width: 100%;
   border: 1px solid #BBBBBB;
   height: 50px;
-  border-radius: 5px;
+  border-radius: 6px;
 }
 
 input:focus-visible {

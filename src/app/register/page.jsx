@@ -6,6 +6,10 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Custom components
+import Input from "@/components/layout/shared/Form/Input";
+import Select from "@/components/layout/shared/Form/Select";
+
 // Assets
 import testLogo from '@/images/placeholder.jpg';
 import kaotimBackgroundImage from '@/images/kaotim-background-image.png';
@@ -26,22 +30,7 @@ import { Pagination } from 'swiper/modules';
 
 export default function Register() {
   const [idType, setIdType] = useState('');
-  const [isFocus_1, setIsFocus_1] = useState(false);
-  const [isFocus_2, setIsFocus_2] = useState(false);
-  const [isFocus_3, setIsFocus_3] = useState(false);
   const [isFocus_4, setIsFocus_4] = useState(false);
-
-  function handleInputChange_1(e) {
-    e.target.value != "" ? setIsFocus_1(true) : setIsFocus_1(false)
-  }
-
-  function handleInputChange_2(e) {
-    e.target.value != "" ? setIsFocus_2(true) : setIsFocus_2(false)
-  }
-
-  function handleInputChange_3(e) {
-    e.target.value != "" ? setIsFocus_3(true) : setIsFocus_3(false)
-  }
 
   function handleInputChange_4(e) {
     e.target.value != "" ? setIsFocus_4(true) : setIsFocus_4(false)
@@ -107,34 +96,25 @@ export default function Register() {
             <p className="text-font-primary text-[32px] font-bold pb-8">Register</p>
             <p className="text-font-primary text-[24px] font-semibold pb-6">Register as new user</p>
             <form action="">
-              <div className="grid grid-cols-3 gap-x-4">
-                <div className="form-parent col-span-1">
-
-                  {/* To fix chevron another time */}
-                  <select className={idType != "" ? "ring-1 ring-primary" : ""} name="id-type" value={idType} onChange={(e) => setIdType(e.target.value)}>
-                    <option value=""></option>
-                    <option value="NRIC">NRIC</option>
-                  </select>
-                  <label className={idType != "" ? "focused" : ""} htmlFor="id-type">Identification Type</label>
-                </div>
-                <div className="form-parent col-span-2">
-                  <input type="text" name="user-id" onChange={handleInputChange_1}></input>
-                  <label className={isFocus_1 ? "focused" : ""} htmlFor="identification-no">Identification No.</label>
-                </div>
+              <div className="grid grid-cols-1 md:grid-cols-3 grid-rows-2 md:grid-rows-none gap-y-4 md:gap-y-0 gap-x-4 pb-6">
+                {/* To fix chevron another time */}
+                <Select id={"identification-type"} label={"Identification Type"} name={"identification-type"} spanNum={1}>
+                  <option value=""></option>
+                  <option value="NRIC">NRIC</option>
+                </Select>
+                <Input id={"identification-no"} label={"Identification No"} type={"text"} name={"identification-no"} spanNum={2} />
               </div>
 
-              <div className="form-parent">
-                <input type="text" name="email" onChange={handleInputChange_2}></input>
-                <label className={isFocus_2 ? "focused" : ""} htmlFor="email">Email</label>
+              <div className="pb-6">
+                <Input id={"email"} label={"Email"} type={"text"} name={"email"} spanNum={1} />
               </div>
 
-              <div className="form-parent">
-                <input type="text" name="phone-number" onChange={handleInputChange_3}></input>
-                <label className={isFocus_3 ? "focused" : ""} htmlFor="phone-number">Phone Number</label>
+              <div className="pb-6">
+                <Input id={"phone-number"} label={"Phone Number"} type={"text"} name={"phone-number"} spanNum={1} />
               </div>
 
-              <div className="form-parent">
-                <input type="text" name="security-phrase" onChange={handleInputChange_4}></input>
+              <div className="form-parent mb-8">
+                <input type="text" name="" onChange={handleInputChange_4}></input>
                 <label className={`${isFocus_4 ? "focused" : ""} flex items-center gap-x-1`} htmlFor="security-phrase">Security Phrase <Image src={questionIcon} alt="" /></label>
               </div>
 

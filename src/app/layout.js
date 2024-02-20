@@ -18,6 +18,7 @@ import "@/styles/collapsible.css";
 import "@/styles/custom.css";
 import "@/styles/daterange.css";
 import "@/styles/form.css";
+import "@/styles/modal.css";
 import "@/styles/normalize.css";
 import "@/styles/swiper.css";
 import "@/styles/tabs.css";

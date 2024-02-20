@@ -14,6 +14,7 @@ module.exports = {
       "font-secondary": "#767676",
       active: "#20C6A8",
       inactive: "#F39200",
+      failed: "#FF0000",
       "background-primary": "#F2F2F2",
       "background-secondary": "#F7F7F7",
       "secondary-gray": "#D8D8D8",

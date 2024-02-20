@@ -110,5 +110,33 @@
 .swiper-chevron {
   width: 8px !important;
 }
-
 /***** End payment swiper *****/
+
+/***** Documents swiper *****/
+.documentsSwiper .swiper-slide {
+  display: unset;
+  width: 100% !important;
+}
+
+.documentsSwiper .swiper-button-prev, .documentsSwiper .swiper-button-next {
+  color: #767676;
+  position: unset;
+  height: unset;
+  width: unset;
+  margin: unset;
+}
+
+.documentsSwiper .swiper-button-next:after, .documentsSwiper .swiper-button-prev:after {
+  font-size: 10px;
+  color: #767676;
+}
+
+.documentsSwiper .swiper-pagination {
+  position: unset;
+}
+
+.swiper-chevron {
+  width: 8px !important;
+}
+
+/***** End documents swiper *****/

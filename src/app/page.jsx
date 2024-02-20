@@ -6,6 +6,9 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
+// Custom components
+import Input from "@/components/layout/shared/Form/Input";
+
 // Assets
 import testLogo from '@/images/placeholder.jpg';
 import kaotimBackgroundImage from '@/images/kaotim-background-image.png';
@@ -23,19 +26,7 @@ import 'swiper/css';
 import 'swiper/css/pagination';
 import { Pagination } from 'swiper/modules';
 
-
 export default function Home() {
-  const [isFocus_1, setIsFocus_1] = useState(false);
-  const [isFocus_2, setIsFocus_2] = useState(false);
-
-  function handleInputChange_1(e) {
-    e.target.value != "" ? setIsFocus_1(true) : setIsFocus_1(false)
-  }
-
-  function handleInputChange_2(e) {
-    e.target.value != "" ? setIsFocus_2(true) : setIsFocus_2(false)
-  }
-
   return (
     <main>
       <Image className="hidden sm:block absolute top-[-15%] right-[-20%] z-1" src={kaotimBackgroundImage} alt="" />
@@ -94,13 +85,9 @@ export default function Home() {
             <p className="text-font-primary text-[32px] font-bold pb-8">Welcome to Customer Portal</p>
             <p className="text-font-primary text-[24px] font-semibold pb-6">Login</p>
             <form action="">
-              <div className="form-parent">
-                <input id="username" type="text" name="user-id" onChange={handleInputChange_1}></input>
-                <label className={isFocus_1 ? "focused" : ""} htmlFor="username">User ID</label>
-              </div>
-              <div className="form-parent">
-                <input type="password" name="password" onChange={handleInputChange_2}></input>
-                <label className={isFocus_2 ? "focused" : ""} htmlFor="password">Password</label>
+              <div className="grid gap-y-6 pb-8">
+                <Input id={"username"} label={"User ID"} type={"text"} name={"username"} spanNum={1} />
+                <Input id={"password"} label={"Password"} type={"password"} name={"password"} spanNum={1} />
               </div>
               <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
                 type="submit">Login</button>

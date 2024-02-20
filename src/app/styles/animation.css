@@ -6,6 +6,10 @@
   animation: fadeOutNav 1s;
 }
 
+.reduce-padding {
+  animation: reducePadding 0.9s forwards;
+}
+
 @keyframes fadeInNav {
   from {
     opacity: 0;
@@ -23,5 +27,15 @@
 
   to {
     opacity: 0;
+  }
+}
+
+@keyframes reducePadding {
+  from {
+    padding-bottom: 2rem;
+  }
+
+  to {
+    padding-bottom: 0;
   }
 }
