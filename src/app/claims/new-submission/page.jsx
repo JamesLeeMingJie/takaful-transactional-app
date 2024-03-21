@@ -41,7 +41,7 @@ export default function NewSubmission() {
             <div className="flex pb-8">
               <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
               <Link href="/claims">
-                <p className="text-font-primary">Back</p>
+                <p className="text-font-primary text-base">Back</p>
               </Link>
             </div>
             <p className="text-[25px] font-bold text-black pb-2">

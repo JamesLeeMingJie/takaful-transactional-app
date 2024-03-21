@@ -17,6 +17,14 @@
   object-fit: cover;
 }
 
+/***** Tabs swiper *****/
+.tabsSwiper .swiper-slide {
+  display: unset;
+  width: fit-content !important;
+}
+
+/***** End tabs swiper *****/
+
 /***** Landing swiper *****/
 .swiper.landingSwiper {
   margin-bottom: 4rem;
@@ -29,6 +37,22 @@
 
 /***** End landing swiper *****/
 
+/***** Homepage swiper *****/
+.swiper.homepageSwiper {
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+}
+
+.homepageSwiper .swiper-pagination {
+  bottom: 0 !important;
+}
+
+.homepageSwiper .swiper-slide {
+  display: unset;
+  width: 100% !important;
+}
+
+/***** End homepage swiper *****/
 
 /***** Certificate swiper *****/
 .certificateSwiper .swiper-slide {
@@ -110,6 +134,7 @@
 .swiper-chevron {
   width: 8px !important;
 }
+
 /***** End payment swiper *****/
 
 /***** Documents swiper *****/

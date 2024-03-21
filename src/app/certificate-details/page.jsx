@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { use, useState } from "react";
 import { useRef } from "react";
 
 // Custom components
@@ -31,6 +31,7 @@ import { DateRangePicker, Stack } from "rsuite";
 // Rsuite styles
 
 export default function CertificateDetails() {
+  const [mobileTakafulTab, setMobileTakafulTab] = useState("general");
   const [tab, setTab] = useState("certificate");
 
   /*
@@ -46,43 +47,131 @@ export default function CertificateDetails() {
       <section>
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p className="text-font-primary">Back</p>
+          <p className="text-font-primary text-base">Back</p>
         </div>
 
-        <div className="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-x-4 pb-8 gap-y-4 md:gap-y-0">
-          <p className="text-[25px] font-bold self-end leading-none text-black">
+        <div className="w-11/12 mx-auto pb-8 flex sm:hidden gap-x-2">
+          <button className={`${mobileTakafulTab == "general" ? "bg-[#E7E7E7]" : "bg-white"} text-font-primary text-[14px] font-bold border-[1px] border-black px-2 py-3 rounded-[30px]`} onClick={() => setMobileTakafulTab("general")}>
+            <Image className="pr-1 inline" src={generalTakafulIcon} width={30} alt="" />General Takaful
+          </button>
+          <button className={`${mobileTakafulTab == "family" ? "bg-[#E7E7E7]" : "bg-white"} text-font-primary text-[14px] font-bold border-[1px] border-black px-2 py-3 rounded-[30px]`} onClick={() => setMobileTakafulTab("family")}>
+            <Image className="pr-1 inline" src={familyTakafulIcon} width={30} alt="" />Family Takaful
+          </button>
+        </div>
+
+        <div className="block sm:hidden mx-auto w-11/12 pb-4">
+          {mobileTakafulTab == "general" && (
+            <Swiper slidesPerView={1.2} spaceBetween={10} className="tabsSwiper">
+              <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px] bg-background-primary">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Motor - </span>
+                    <span className="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px]">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Motor - </span>
+                    <span className="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide>
+
+              {/* Adding more slides will break the Swiper, not sure why yet.. */}
+              {/* <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px]">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Motor - </span>
+                    <span className="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px]">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Motor - </span>
+                    <span className="text-font-secondary">Kaotim Motorcycle</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide> */}
+            </Swiper>
+          )}
+
+          {mobileTakafulTab == "family" && (
+            <Swiper slidesPerView={1.2} spaceBetween={10} className="tabsSwiper">
+              <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px]">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Takaful - </span>
+                    <span className="text-font-secondary">Medicard</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide>
+              <SwiperSlide>
+                <div className="py-3 px-4 rounded-[12px]">
+                  <p className="text-base">
+                    <span className="text-font-primary font-bold">Takaful - </span>
+                    <span className="text-font-secondary">Term</span>
+                  </p>
+                  <p className="text-[#BBBBBB] text-[10px]">
+                    Certificate No- TMMC0000829/V0499577
+                  </p>
+                </div>
+              </SwiperSlide>
+            </Swiper>
+          )}
+
+        </div>
+
+        <div className="mx-auto w-11/12 sm:w-10/12 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-x-4 pb-8 gap-y-4 md:gap-y-0">
+          <p className="text-[25px] hidden sm:block font-bold self-end leading-none text-black">
             Certificate Details
           </p>
-          <div>
-            <div className="bg-background-primary py-2 px-3 w-fit hidden sm:flex gap-x-4 rounded-[8px]">
-              <button className={`${tab == "certificate" ? "bg-white" : ""} text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]`}
-                onClick={() => setTab("certificate")}>
-                Certificate
-              </button>
-              <button className={`${tab == "claims" ? "bg-white" : ""} text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]`}
-                onClick={() => setTab("claims")}>
-                Claims
-              </button>
-              <button className={`${tab == "payment" ? "bg-white" : ""} text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]`}
-                onClick={() => setTab("payment")}>
-                Payment
-              </button>
-              <button className={`${tab == "document" ? "bg-white" : ""} text-font-primary text-[18px] font-medium py-2 px-2.5 rounded-[6px]`}
-                onClick={() => setTab("document")}>
-                Document
-              </button>
-            </div>
+          <div className="bg-background-primary py-2 px-3 w-fit block sm:flex gap-x-4 rounded-[8px]">
+            <button className={`${tab == "certificate" ? "bg-white" : ""} text-font-primary text-base font-medium py-2 px-2.5 rounded-[6px]`}
+              onClick={() => setTab("certificate")}>
+              Certificate
+            </button>
+            <button className={`${tab == "claims" ? "bg-white" : ""} text-font-primary text-base font-medium py-2 px-2.5 rounded-[6px]`}
+              onClick={() => setTab("claims")}>
+              Claims
+            </button>
+            <button className={`${tab == "payment" ? "bg-white" : ""} text-font-primary text-base font-medium py-2 px-2.5 rounded-[6px]`}
+              onClick={() => setTab("payment")}>
+              Payment
+            </button>
+            <button className={`${tab == "document" ? "bg-white" : ""} text-font-primary text-base font-medium py-2 px-2.5 rounded-[6px]`}
+              onClick={() => setTab("document")}>
+              Document
+            </button>
           </div>
         </div>
 
-        <div className="mx-auto w-10/12 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-x-4 gap-y-8 md:gap-y-0">
+        <div className="mx-auto w-11/12 grid grid-cols-1 md:grid-cols-[1fr_3fr] gap-x-4 gap-y-8 md:gap-y-0">
           {/* ===== Left column ===== */}
-          <div>
+          <div className="hidden sm:block">
             {/* General Takaful */}
             <div className="pb-8">
               <div className="flex">
-                <Image className="pr-2 -translate-y-1" src={generalTakafulIcon} alt="" />
-                <p className="text-font-primary text-[18px] font-bold">
+                <Image className="pr-2 -translate-y-1" src={generalTakafulIcon} width={30} alt="" />
+                <p className="text-font-primary text-base font-bold">
                   General Takaful
                 </p>
               </div>
@@ -91,7 +180,7 @@ export default function CertificateDetails() {
                 {/* This translate will produce some frontend "bugs", to perfect later */}
                 <div className="translate-y-[15px]">
                   <div className="py-3 px-4 rounded-[12px] bg-background-primary ml-4">
-                    <p className="text-[18px]">
+                    <p className="text-base">
                       <span className="text-font-primary font-bold">Motor - </span>
                       <span className="text-font-secondary">Kaotim Motorcycle</span>
                     </p>
@@ -100,7 +189,7 @@ export default function CertificateDetails() {
                     </p>
                   </div>
                   <div className="py-3 px-4 rounded-[12px] ml-4">
-                    <p className="text-[18px]">
+                    <p className="text-base">
                       <span className="text-font-primary font-bold">Motor - </span>
                       <span className="text-font-secondary">Kaotim Motorcycle</span>
                     </p>
@@ -109,7 +198,7 @@ export default function CertificateDetails() {
                     </p>
                   </div>
                   <div className="py-3 px-4 rounded-[12px] ml-4">
-                    <p className="text-[18px]">
+                    <p className="text-base">
                       <span className="text-font-primary font-bold">Motor - </span>
                       <span className="text-font-secondary">Kaotim Motorcycle</span>
                     </p>
@@ -125,8 +214,8 @@ export default function CertificateDetails() {
             {/* Family Takaful */}
             <div>
               <div className="flex">
-                <Image className="pr-2 -translate-y-1" src={familyTakafulIcon} alt="" />
-                <p className="text-font-primary text-[18px] font-bold">
+                <Image className="pr-2 -translate-y-1" src={familyTakafulIcon} width={30} alt="" />
+                <p className="text-font-primary text-base font-bold">
                   Family Takaful
                 </p>
               </div>
@@ -135,7 +224,7 @@ export default function CertificateDetails() {
                 {/* This translate will produce some frontend "bugs", to perfect later */}
                 <div className="translate-y-[15px]">
                   <div className="py-3 px-4 rounded-[12px] ml-4">
-                    <p className="text-[18px]">
+                    <p className="text-base">
                       <span className="text-font-primary font-bold">Takaful - </span>
                       <span className="text-font-secondary">Medicard</span>
                     </p>
@@ -144,7 +233,7 @@ export default function CertificateDetails() {
                     </p>
                   </div>
                   <div className="py-3 px-4 rounded-[12px] ml-4">
-                    <p className="text-[18px]">
+                    <p className="text-base">
                       <span className="text-font-primary font-bold">Takaful - </span>
                       <span className="text-font-secondary">Term</span>
                     </p>
@@ -157,6 +246,7 @@ export default function CertificateDetails() {
             </div>
             {/* End Family Takaful */}
           </div>
+
           {/* ===== End Left column ===== */}
 
           {/* ===== Right column ===== */}
@@ -170,7 +260,7 @@ export default function CertificateDetails() {
                 <div className="border-b-[1.5px] border-[#EEEEEE]">
                   <Collapsible title={"Certificate Details"}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 pb-6">
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Certificate No.
                         </p>
@@ -179,7 +269,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Product Name
                         </p>
@@ -188,7 +278,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Vehicle No.
                         </p>
@@ -197,7 +287,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Vehicle Model
                         </p>
@@ -206,7 +296,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           NCD(%)
                         </p>
@@ -215,7 +305,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Sum Covered (RM)
                         </p>
@@ -224,7 +314,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Effective Date
                         </p>
@@ -233,7 +323,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Expiry Date
                         </p>
@@ -242,7 +332,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Details of Branch
                         </p>
@@ -251,7 +341,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Excess (RM)
                         </p>
@@ -269,7 +359,7 @@ export default function CertificateDetails() {
                 <div className="pt-6 border-b-[1.5px] border-[#EEEEEE]">
                   <Collapsible title={"Participant Details"}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 pb-6">
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Full Name
                         </p>
@@ -278,7 +368,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Phone No.
                         </p>
@@ -287,7 +377,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Identification No.
                         </p>
@@ -296,7 +386,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Gender
                         </p>
@@ -305,7 +395,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Email
                         </p>
@@ -314,7 +404,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Marital Status
                         </p>
@@ -323,7 +413,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px] md:col-span-2">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Address Line 1
                         </p>
@@ -332,7 +422,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Address Line 2
                         </p>
@@ -341,7 +431,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Address Line 3
                         </p>
@@ -350,7 +440,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           Postcode
                         </p>
@@ -359,7 +449,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base">
                         <p className="text-font-secondary">
                           City
                         </p>
@@ -368,7 +458,7 @@ export default function CertificateDetails() {
                         </p>
                       </div>
 
-                      <div className="text-[18px] md:col-span-2">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           State
                         </p>
@@ -386,27 +476,20 @@ export default function CertificateDetails() {
                 <div className="pt-6 border-b-[1.5px] border-[#EEEEEE]">
                   <Collapsible title={"Contribution Details"}>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-y-8 pb-6">
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Basic Contribution
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
                         <p className="text-font-primary font-bold">
                           RM1073.47
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
-                        <p className="text-primary">
+                      <div className="text-base text-primary md:col-span-2">
+                        <p>
                           No Claim Discount (38.33%)
                         </p>
-                      </div>
-
-
-                      <div className="text-[18px]">
-                        <p className="text-primary font-bold">
+                        <p className="font-bold">
                           -RM411.46
                         </p>
                       </div>
@@ -414,69 +497,54 @@ export default function CertificateDetails() {
                       {/* Width below will not be responsive! Find a better solution */}
                       <div className="border-b-[1.5px] border-[#EEEEEE] md:col-span-2 w-[63%]"></div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Base Contribution
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
                         <p className="text-font-primary font-bold">
                           RM662.01
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Service Tax (6%)
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
                         <p className="text-font-primary font-bold">
                           RM36.83
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Stamp Duty
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
                         <p className="text-font-primary font-bold">
                           RM10.00
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
-                        <p className="text-primary">
+                      <div className="text-base text-primary md:col-span-2">
+                        <p>
                           Rebate (10%)
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
-                        <p className="text-primary font-bold">
+                        <p className="font-bold">
                           -RM70.88
                         </p>
                       </div>
 
                       <div className="border-b-[1.5px] border-[#EEEEEE] md:col-span-2 w-[63%]"></div>
 
-                      <div className="text-[18px] md:col-span-2">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-primary">
                           Add On
                         </p>
                       </div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Legal liability to passengers
                         </p>
-                      </div>
-
-                      <div className="text-[18px]">
                         <p className="text-font-primary font-bold">
                           RM250
                         </p>
@@ -484,14 +552,11 @@ export default function CertificateDetails() {
 
                       <div className="border-b-[1.5px] border-[#EEEEEE] md:col-span-2 w-[63%]"></div>
 
-                      <div className="text-[18px]">
+                      <div className="text-base md:col-span-2">
                         <p className="text-font-secondary">
                           Total Contribution
                         </p>
-                      </div>
-
-                      <div className="text-[22px]">
-                        <p className="text-font-primary font-bold">
+                        <p className="text-[22px] text-font-primary font-bold">
                           RM887.96
                         </p>
                       </div>
@@ -527,7 +592,7 @@ export default function CertificateDetails() {
                       }} modules={[Pagination, Navigation]} className="certificateSwiper">
                         <SwiperSlide>
                           <div
-                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base sm:text-[18px] font-semibold items-center pb-8">
+                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base font-semibold items-center pb-8">
 
                             {/* First row */}
                             <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
@@ -596,7 +661,7 @@ export default function CertificateDetails() {
                         </SwiperSlide>
                         <SwiperSlide>
                           <div
-                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base sm:text-[18px] font-semibold items-center pb-8">
+                            className="grid sm:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base font-semibold items-center pb-8">
 
                             {/* First row */}
                             <div className="grid grid-cols-2 sm:grid-cols-[1fr_2fr_7fr_2fr] h-full items-center gap-x-4 gap-y-4 sm:gap-y-0 p-4 sm:p-0 sm:pl-4 text-center sm:text-left">
@@ -784,7 +849,7 @@ export default function CertificateDetails() {
                   <div className="border-b-[2px] border-[#BBBBBB] col-span-2"></div>
 
                   <div
-                    className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] font-semibold items-center pb-8">
+                    className="grid grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base font-semibold items-center pb-8">
 
                     {/* First row */}
                     <div className="grid grid-cols-4 h-full items-center gap-x-4 pl-4">
@@ -864,7 +929,7 @@ export default function CertificateDetails() {
                 <div>
                   {/* Collapsible button */}
                   <div className="flex justify-between pb-6">
-                    <p className="text-font-primary text-[18px] font-bold">Related Documents</p>
+                    <p className="text-font-primary text-base font-bold">Related Documents</p>
                   </div>
 
                   {/* Collapsible content */}
@@ -872,7 +937,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -881,7 +946,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -890,7 +955,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />
@@ -899,7 +964,7 @@ export default function CertificateDetails() {
                     <div className="flex justify-between">
                       <div className="flex items-center">
                         <Image className="pr-4" src={downloadDocumentIcon} width={40} alt="" />
-                        <p className="text-base sm:text-[18px] text-font-primary">policy_cert_14804.pdf</p>
+                        <p className="text-base text-font-primary">policy_cert_14804.pdf</p>
                       </div>
                       <div>
                         <Image className="cursor-pointer" src={downloadButtonIcon} alt="" />

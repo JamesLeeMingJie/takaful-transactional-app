@@ -31,7 +31,7 @@ export default function Documents() {
       <section className="z-10">
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p className="text-font-primary">Back</p>
+          <p className="text-font-primary text-base">Back</p>
         </div>
         <p className="mx-auto w-10/12 text-[25px] font-bold pb-8 text-black">
           Documents
@@ -39,11 +39,11 @@ export default function Documents() {
         <div className="mx-auto w-10/12 pb-6 flex justify-between">
           <div className="flex flex-wrap gap-2 h-fit">
             <button
-              className={`${tab == 'all' ? "border-primary text-primary bg-[#F1D0F6]" : "border-[#000000] text-[#000000] bg-[#FFFFFF]"}  border-[1px] rounded-[40px] py-2 px-6`} onClick={() => setTab("all")}>All</button>
+              className={`${tab == 'all' ? "border-primary text-primary" : "border-[#000000] text-[#000000] "} border-[1px] rounded-[40px] py-2 px-6`} onClick={() => setTab("all")}>All</button>
             <button
-              className={`${tab == 'general' ? "border-[#F39200] text-[#F39200] bg-[#F5EFE6]" : "border-[#000000] text-[#000000] bg-[#FFFFFF]"} border-[1px] rounded-[40px] py-2 px-6 `} onClick={() => setTab("general")}>General</button>
+              className={`${tab == 'general' ? "border-[#F39200] text-[#F39200]" : "border-[#000000] text-[#000000]"} border-[1px] rounded-[40px] py-2 px-6 `} onClick={() => setTab("general")}>General</button>
             <button
-              className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF]" onClick={() => setTab("family")}>Family</button>
+              className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6" onClick={() => setTab("family")}>Family</button>
           </div>
         </div>
 
@@ -79,7 +79,7 @@ export default function Documents() {
             }} modules={[Pagination, Navigation]} className="documentsSwiper">
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr] h-full items-center text-center md:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
@@ -137,7 +137,7 @@ export default function Documents() {
               </SwiperSlide>
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[2fr_1fr_1fr] h-full items-center text-center md:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
@@ -208,7 +208,7 @@ export default function Documents() {
 
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1fr_2fr] h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
@@ -310,7 +310,7 @@ export default function Documents() {
               </SwiperSlide>
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1fr_2fr] h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">

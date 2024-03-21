@@ -29,40 +29,40 @@ export default function Payment() {
       <section className="z-10">
         <div className="mx-auto w-10/12 flex pb-8">
           <Image className="inline-block pr-2" src={arrowBackIcon} alt="" />
-          <p className="text-font-primary">Back</p>
+          <p className="text-font-primary text-base">Back</p>
         </div>
         <p className="mx-auto w-10/12 text-[25px] font-bold pb-8 text-black">
           Payment Overview
         </p>
         <div className="mx-auto w-10/12 pb-6 flex justify-between">
-          <div className="flex flex-wrap gap-2 h-fit">
+          <div className="flex gap-2 h-fit">
             <button
-              className={`${tab == 'successful' ? "border-[#4CAF50] text-[#4CAF50] bg-[#4CAF50]/15" : "border-[#000000] text-[#000000] bg-[#FFFFFF]"}  border-[1px] rounded-[40px] py-2 px-6`} onClick={() => setTab("successful")}>Successful</button>
+              className={`${tab == 'successful' ? "border-[#4CAF50] text-[#4CAF50]" : "border-[#000000] text-[#000000]"} border-[1px] rounded-[40px] py-2 px-6`} onClick={() => setTab("successful")}>Successful</button>
             <button
-              className={`${tab == 'pending' ? "border-[#F39200] text-[#F39200] bg-[#F5EFE6]" : "border-[#000000] text-[#000000] bg-[#FFFFFF]"} border-[1px] rounded-[40px] py-2 px-6 `} onClick={() => setTab("pending")}>Pending</button>
+              className={`${tab == 'pending' ? "border-[#F39200] text-[#F39200]" : "border-[#000000] text-[#000000]"} border-[1px] rounded-[40px] py-2 px-6 `} onClick={() => setTab("pending")}>Pending</button>
             <button
-              className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6 bg-[#FFFFFF]" onClick={() => setTab("failed")}>Failed</button>
+              className="border-[#000000] text-[#000000] border-[1px] rounded-[40px] py-2 px-6" onClick={() => setTab("failed")}>Failed</button>
           </div>
         </div>
 
         {/* Main payment body */}
-        <div className="mx-auto w-10/12 rounded-[6px] bg-white relative z-10" style={{ boxShadow: "0px 4px 8px 2px #0000000D" }}>
-          <div className={`grid ${tab == 'successful' ? "grid-cols-2 md:grid-cols-4" : "grid-cols-2 md:grid-cols-[1fr_1fr_1fr_2fr]"} text-center sm:text-left gap-x-4 gap-y-4 sm:gap-y-0 py-4 px-6`}>
+        <div className="mx-auto w-11/12 sm:w-10/12 rounded-[6px] bg-white relative z-10" style={{ boxShadow: "0px 4px 8px 2px #0000000D" }}>
+          <div className={`grid ${tab == 'successful' ? "grid-cols-3 md:grid-cols-4" : "grid-cols-3 md:grid-cols-[1fr_1fr_1fr_2fr]"} text-left gap-x-2 sm:gap-x-4 gap-y-4 sm:gap-y-0 py-4 px-4 sm:px-6`}>
             <div className="text-font-secondary text-[14px]">
               Certificate No.
             </div>
-            <div className="text-font-secondary text-[14px]">
+            <div className="text-font-secondary text-[14px] pl-1 sm:pl-0">
               Name
             </div>
             <div className="text-font-secondary text-[14px]">
               Date & Time
             </div>
-            <div className="text-font-secondary text-[14px]">
+            <div className="hidden sm:block text-font-secondary text-[14px]">
               Amount
             </div>
           </div>
 
-          <div className="border-b-[1px] border-secondary-gray col-span-2"></div>
+          <div className="border-b-[1px] border-secondary-gray col-span-2 w-11/12 sm:w-full mx-auto"></div>
 
           {tab == "successful" && (
             <Swiper pagination={{ type: 'fraction', el: '.swiper-pagination-successful' }} navigation={{
@@ -70,10 +70,10 @@ export default function Payment() {
             }} modules={[Pagination, Navigation]} className="paymentSwiper">
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] px-4 sm:px-0 alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       11246685
                     </p>
@@ -83,7 +83,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -94,7 +94,7 @@ export default function Payment() {
                   </div>
 
                   {/* Second row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       2346577
                     </p>
@@ -104,7 +104,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -115,7 +115,7 @@ export default function Payment() {
                   </div>
 
                   {/* Third row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       3234535
                     </p>
@@ -125,7 +125,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -136,7 +136,7 @@ export default function Payment() {
                   </div>
 
                   {/* Fourth row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       4144356
                     </p>
@@ -146,7 +146,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -159,10 +159,10 @@ export default function Payment() {
               </SwiperSlide>
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] px-4 sm:px-0 alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       11246685
                     </p>
@@ -172,7 +172,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -183,7 +183,7 @@ export default function Payment() {
                   </div>
 
                   {/* Second row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       2346577
                     </p>
@@ -193,7 +193,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -204,7 +204,7 @@ export default function Payment() {
                   </div>
 
                   {/* Third row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       3234535
                     </p>
@@ -214,7 +214,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -225,7 +225,7 @@ export default function Payment() {
                   </div>
 
                   {/* Fourth row */}
-                  <div className="grid grid-cols-2 md:grid-cols-4 h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
+                  <div className="grid grid-cols-3 md:grid-cols-4 h-full items-start sm:items-center text-left gap-x-4 gap-y-4 md:gap-y-0 py-4 px-2 sm:px-6 lg:py-0">
                     <p className="font-semibold">
                       4144356
                     </p>
@@ -235,7 +235,7 @@ export default function Payment() {
                     <p className="mt-0">
                       21/06/2023 15:02:22
                     </p>
-                    <div className="flex flex-col sm:flex-row items-center justify-between">
+                    <div className="hidden sm:flex flex-col sm:flex-row items-center justify-between">
                       <p className="mt-0">
                         234.09
                       </p>
@@ -261,7 +261,7 @@ export default function Payment() {
 
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1fr_2fr] h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">
@@ -363,7 +363,7 @@ export default function Payment() {
               </SwiperSlide>
               <SwiperSlide>
                 <div
-                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-[18px] items-center pb-8">
+                  className="grid lg:grid-rows-[50px_50px_50px_50px] alternate-grey-rows text-font-primary text-base items-center pb-8">
 
                   {/* First row */}
                   <div className="grid grid-cols-2 md:grid-cols-[1fr_1fr_1fr_2fr] h-full items-center text-center sm:text-left gap-x-4 gap-y-4 md:gap-y-0 p-6 lg:py-0">

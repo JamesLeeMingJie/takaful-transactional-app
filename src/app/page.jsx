@@ -20,11 +20,11 @@ import blueArrow from '@/icons/blue-arrow-icon.svg';
 
 // Swiper components
 import { Swiper, SwiperSlide } from 'swiper/react';
+import { Pagination } from 'swiper/modules';
 
 // Swiper styles
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { Pagination } from 'swiper/modules';
 
 export default function Home() {
   return (

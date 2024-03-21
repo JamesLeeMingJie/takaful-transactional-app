@@ -28,7 +28,7 @@ export default function Navigation() {
 
   return (
     <header className={`mx-auto w-10/12 pt-8 pb-12 ${pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" : "flex justify-between"}`}>
-      <Link className="block w-fit" href={"/"}>
+      <Link className="block w-[140px] sm:w-fit" href={"/"}>
         <Image src={navLogo} alt="" />
       </Link>
       {pathname == "/" || pathname == "/register" || pathname == "/forgot-password" ? "" :

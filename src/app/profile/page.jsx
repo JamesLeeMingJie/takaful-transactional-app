@@ -8,7 +8,7 @@ import profilePic from '@/icons/profile-icon.svg';
 export default function Profile() {
     return (
         <main>
-            <section className="pb-0 mt-8">
+            <section className="pb-0">
                 <div className=" mx-auto w-10/12 flex items-center pb-10 gap-1">
                     <Image className="w-5 h-5" src={arrowBackIcon} alt="" />
                     <Link href="/homepage" className="text-base text-font-primary hover:no-underline hover:text-font-primary">
@@ -61,35 +61,35 @@ export default function Profile() {
                             </div>
 
                             {/** second row */}
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-light text-font-secondary">Full Name</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">Ismail Abu bin Mamat</p>
                             </div>
 
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className=" font-light text-font-secondary">Phone No.</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">0123456789</p>
                             </div>
 
                             {/** third row */}
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className=" font-light text-font-secondary">Identification No.</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">601112-01-5543</p>
                             </div>
 
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className=" font-light text-font-secondary">Gender</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">Male</p>
 
                             </div>
 
                             {/** fourth row */}
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">Email</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">ismail.abu20@gmail.com</p>
                             </div>
 
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">Marital Status</p>
                                 <p className="font-semibold mt-1.5 text-font-primary">Married</p>
                             </div>
@@ -106,35 +106,35 @@ export default function Profile() {
                             </div>
 
                             {/** 6th row */}
-                            <div className="col-span-2 text-[18px]">
+                            <div className="col-span-2 text-base">
                                 <p className="font-normal text-font-secondary">Address Line 1</p>
                                 <p className="font-semibold mt-1.5">No 100-2-G, Casadera Apartment</p>
                             </div>
 
                             {/** 7th row */}
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">Address Line 2</p>
                                 <p className="font-semibold mt-1.5">Persiaran Margosa</p>
                             </div>
 
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">Address Line 3</p>
                                 <p className="font-semibold mt-1.5">Jalan PJU/9</p>
                             </div>
 
                             {/** 8th row */}
-                            <div className="col-span-2 sm:col-span-1 text-[18px]">
+                            <div className="col-span-2 sm:col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">Postcode</p>
                                 <p className="font-semibold mt-1.5">52200</p>
                             </div>
 
-                            <div className="col-span-1 text-[18px]">
+                            <div className="col-span-1 text-base">
                                 <p className="font-normal text-font-secondary">City</p>
                                 <p className="font-semibold mt-1.5">Bandar Sri Damansara</p>
                             </div>
 
                             {/** 9th row */}
-                            <div className="col-span-2 mb-6 text-[18px]">
+                            <div className="col-span-2 mb-6 text-base">
                                 <p className="font-normal text-font-secondary">State</p>
                                 <p className="font-semibold mt-1.5">Kuala Lumpur</p>
                             </div>
