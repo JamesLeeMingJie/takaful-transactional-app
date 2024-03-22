@@ -50,7 +50,7 @@
 }
 
 .landingSwiper .swiper-pagination {
-  bottom: -4px !important;
+  bottom: 0 !important;
 }
 
 /***** End landing swiper *****/
