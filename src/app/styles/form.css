@@ -38,6 +38,7 @@
 
 .form-parent input:focus {
   border-color: #D9D9D9;
+  background: transparent;
 }
 
 .form-parent input:focus-visible {

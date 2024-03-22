@@ -17,6 +17,12 @@
   object-fit: cover;
 }
 
+.swiper-pagination-bullet-active {
+  width: 10px !important;
+  height: 10px !important;
+  transform: translateY(1px);
+}
+
 /***** Tabs swiper *****/
 .tabsSwiper .swiper-slide {
   display: unset;
@@ -28,11 +34,23 @@
 /***** Landing swiper *****/
 .swiper.landingSwiper {
   margin-bottom: 4rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
+}
+
+@media only screen and (max-width: 480px) {
+  .swiper.landingSwiper {
+    margin-bottom: 1.5rem !important;
+  }
+}
+
+.landingSwiper .swiper-slide {
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0px 9px 8px 0px #1111111A;
 }
 
 .landingSwiper .swiper-pagination {
-  bottom: 0 !important;
+  bottom: -4px !important;
 }
 
 /***** End landing swiper *****/
@@ -40,7 +58,7 @@
 /***** Homepage swiper *****/
 .swiper.homepageSwiper {
   margin-bottom: 4rem;
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .homepageSwiper .swiper-pagination {

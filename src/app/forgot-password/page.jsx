@@ -12,7 +12,7 @@ import Select from "@/components/layout/shared/Form/Select";
 
 // Assets
 import testLogo from '@/images/placeholder.jpg';
-import kaotimBackgroundImage from '@/images/kaotim-background-image.png';
+import kaotimBackgroundImage from '@/images/kaotim-background-image-landing.png';
 import customerServiceIcon from '@/icons/customer-service-icon.svg';
 import telephoneIcon from '@/icons/telephone-icon.svg';
 import emailIcon from '@/icons/email-icon.svg';
@@ -30,11 +30,11 @@ import { Pagination } from 'swiper/modules';
 export default function ForgotPassword() {
   return (
     <main>
-      <Image className="hidden sm:block absolute top-[-20%] right-[-20%] z-1 w-[55%]" src={kaotimBackgroundImage} alt="" />
+      <Image className="hidden sm:block absolute top-[-10%] right-[-15%] z-1 w-[60%] 3xl:w-[58%]" src={kaotimBackgroundImage} alt="" />
       <section className="z-10 relative">
         <div className="mx-auto w-10/12 grid grid-cols-1 lg:grid-cols-2 gap-x-28">
-          <div className="h-fit pb-12 lg:pb-0">
-            <Swiper pagination={{ clickable: true }} modules={[Pagination]} className="landingSwiper">
+          <div className="h-fit pb-0 sm:pb-12 lg:pb-0">
+            <Swiper spaceBetween={20} pagination={{ clickable: true }} modules={[Pagination]} className="landingSwiper">
               <SwiperSlide>
                 <Image src={testLogo} alt=""></Image>
               </SwiperSlide>
@@ -52,7 +52,7 @@ export default function ForgotPassword() {
               </SwiperSlide>
             </Swiper>
 
-            <div className="mt-4 flex justify-center">
+            <div className="mt-4 hidden sm:flex justify-center">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4 sm:gap-y-0">
                 <div className="shadow-lg p-4 rounded-[8px] grid justify-center w-fit bg-white">
                   <div className="grid grid-cols-[30px_1fr] gap-x-2 items-center">
@@ -84,8 +84,8 @@ export default function ForgotPassword() {
           </div>
 
           <div>
-            <p className="text-font-primary text-[32px] font-bold pb-8">Forgot your password</p>
-            <p className="text-font-primary text-[24px] font-semibold pb-6">Reset your password/username</p>
+            <p className="text-font-primary text-[22px] sm:text-[32px] font-bold pb-4 sm:pb-8">Forgot your password</p>
+            <p className="text-font-primary text-[18px] sm:text-[24px] font-normal sm:font-semibold pb-6">Reset your password/username</p>
             <form action="">
               <div className="pb-6">
                 <Input id={"email"} label={"Email"} type={"text"} name={"email"} spanNum={1} />
@@ -100,10 +100,10 @@ export default function ForgotPassword() {
                 <Input id={"identification-no"} label={"Identification No"} type={"text"} name={"identification-no"} spanNum={2} />
               </div>
 
-              <button className="mb-10 bg-primary text-white text-[18px] font-bold w-full rounded-[30px] py-4"
+              <button className="mb-10 bg-primary hover:bg-primary/70 transition ease-out duration-300 text-white text-[18px] font-bold w-full rounded-[30px] py-4"
                 type="submit">Send To Email</button>
             </form>
-            <p className="pb-2 flex gap-x-2">
+            <p className="pb-0 sm:pb-2 flex gap-x-2">
               <Image className="inline-block" src={blueArrow} alt="" /><span
                 className="text-font-primary">Have an account?</span>
               <span className="text-[#237BFF]"><Link href="/">Login here</Link></span>
@@ -114,8 +114,34 @@ export default function ForgotPassword() {
               <span className="text-[#237BFF]"><Link href="/register">Register here</Link></span>
             </p>
           </div>
-
         </div>
+
+        <div className="mt-12 mx-auto w-9/12 flex sm:hidden justify-center">
+          <div className="grid grid-cols-2 gap-x-4 gap-y-4 sm:gap-y-0">
+            <div className="p-4 rounded-[8px] grid justify-center w-fit bg-white" style={{
+              boxShadow: "0px 4px 4px 0px #C7C9C740"
+            }}>
+
+              <div className="pb-2 flex justify-center">
+                <Image src={customerServiceIcon} alt="Human Support" />
+              </div>
+
+              <p className="text-base font-medium text-font-primary text-center leading-[20px]">Customer Service</p>
+              <p className="text-[12px] text-[#595D59] text-center">1-300 88 252 385</p>
+            </div>
+
+            <div className="p-4 rounded-[8px] grid justify-center w-full bg-white" style={{
+              boxShadow: "0px 4px 4px 0px #C7C9C740"
+            }}>
+              <div className="pb-2 flex justify-center">
+                <Image src={emailIcon} alt="Email Icon" />
+              </div>
+              <p className="text-base font-medium text-font-primary text-center">Email</p>
+              <p className="text-[12px] text-[#595D59] text-center">csu@takaful-<br />malaysia.com.my</p>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </main>
